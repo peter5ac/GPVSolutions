@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPV Solutions | CNC USB Backup & Disaster Recovery</title>
+    <style>
+        :root {
+            --primary: #0F172A;
+            --accent: #2563EB;
+            --bg-light: #F8FAFC;
+            --text-dark: #334155;
+            --border: #E2E8F0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        header p {
+            margin-top: 0.5rem;
+            color: #94A3B8;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            background-color: var(--bg-light);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .pricing-card {
+            border: 2px solid var(--accent);
+            text-align: center;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 0.5rem 0;
+        }
+
+        .policy-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer {
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border);
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748B;
+            margin-top: 4rem;
+        }
+
+        .contact-box {
+            background-color: #EFF6FF;
+            border: 1px solid #BFDBFE;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>GPV Solutions</h1>
+        <p>Offline-First Disaster Recovery for Modern Manufacturing</p>
+    </header>
+
+    <div class="container">
+        <section class="hero-section">
+            <h2>CNC USB Cloud Backup App</h2>
+            <p>
+                GPV Solutions provides iOS-native backup software designed specifically for field technicians, job shops, and machinists operating air-gapped CNC hardware. Our app bridges standard USB storage with secure cloud infrastructure (Google Workspace & Microsoft SharePoint) without requiring network retrofits or on-site IT support.
+            </p>
+        </section>
+
+        <div class="cards-grid">
+            <div class="card">
+                <h3>Dead-Simple 1-Tap Backups</h3>
+                <p>Plug in a supported USB drive to automatically capture critical G-code, tool tables, and CNC parameters directly from your controller board.</p>
+            </div>
+            <div class="card">
+                <h3>Air-Gapped & Offline Ready</h3>
+                <p>Built for remote shop floors where Wi-Fi is spotty or nonexistent. The app functions completely offline and syncs back to the cloud when connected.</p>
+            </div>
+            <div class="card">
+                <h3>Automated Cloud Sync</h3>
+                <p>Safely transfer parameter backups to enterprise cloud drives so your machine data is instantly accessible during disaster recovery situations.</p>
+            </div>
+        </div>
+
+        <section style="margin-top: 4rem;">
+            <h2 style="text-align: center; color: var(--primary);">Plans & Pricing</h2>
+            <div class="cards-grid" style="justify-content: center;">
+                <div class="card pricing-card">
+                    <h3>Fleet Plan</h3>
+                    <div class="price">$99.00 <span style="font-size: 1rem; font-weight: normal;">/ month</span></div>
+                    <p>Ideal for Job Shops & Fleet Operations</p>
+                    <ul style="text-align: left; padding-left: 1.2rem;">
+                        <li>Up to 5 iPad / iOS Device Licenses</li>
+                        <li>Automated Google Drive & SharePoint Sync</li>
+                        <li>90-Day Offline Operating Tokens</li>
+                        <li>Standard Business Support</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="policy-section">
+            <h3>Customer Service & Support</h3>
+            <div class="contact-box">
+                <p><strong>Support Email:</strong> support@gpvsolutions.com</p>
+                <p><strong>Business Inquiries:</strong> contact@gpvsolutions.com</p>
+                <p><strong>Operating Hours:</strong> Monday – Friday, 9:00 AM – 5:00 PM EST</p>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Subscription & Refund Policies</h3>
+            <p><strong>Cancellation Policy:</strong> Subscriptions can be canceled at any time through your Stripe Billing Management link or by emailing support@gpvsolutions.com. Upon cancellation, your license remains active through the end of the current paid billing cycle.</p>
+            <p><strong>Refund Policy:</strong> We offer a 14-day money-back guarantee for initial subscription sign-ups. If GPV Solutions software does not meet your operational requirements, contact support within 14 days of purchase for a full refund.</p>
+            <p><strong>Delivery Policy:</strong> All digital license keys and offline activation tokens are delivered electronically via email immediately upon payment confirmation.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 GPV Solutions. All rights reserved.</p>
+        <p>GPV Solutions LLC | Industrial Software Systems</p>
+    </footer>
+
+</body>
+</html>
