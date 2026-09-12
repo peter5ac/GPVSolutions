@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | CNC Vault</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        h1 { border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+        h2 { margin-top: 1.5rem; }
+        footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #eee; font-size: 0.9rem; color: #666; }
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .contact-box {
+            background-color: #EFF6FF;
+            border: 1px solid #BFDBFE;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        details {
+            margin-bottom: 1rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+        }
+        details p { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+
+    <h1>CNC Vault Support</h1>
+    <p><em>Last updated: September 12, 2026</em></p>
+
+    <p>CNC Vault backs up files from mounted USB drives to your Dropbox, Google Drive, or SharePoint account, built for CNC shop floors where network connectivity can't be relied on. If something isn't working the way you expect, start with the FAQ below or reach out directly.</p>
+
+    <div class="contact-box">
+        <p><strong>Support Email:</strong> <a href="mailto:support@gpvsolutions.com">support@gpvsolutions.com</a></p>
+        <p><strong>Response Time:</strong> We aim to reply within 1–2 business days, Monday – Friday.</p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+        <summary>My USB drive isn't being detected</summary>
+        <p>CNC Vault reads from drives formatted with a file system iPadOS can mount (FAT32 or exFAT are the most reliable for USB sticks pulled from CNC controllers). Make sure the drive is fully inserted and, if you're using a USB-C hub or adapter, try connecting it directly. Nothing on the drive is ever modified — CNC Vault only reads files, so re-plugging it is always safe.</p>
+    </details>
+
+    <details>
+        <summary>The app didn't identify my machine correctly</summary>
+        <p>CNC Vault reads the manufacturer and serial number directly from the files on the drive every time it's mounted — it doesn't remember what was on a drive last time, since the same USB stick is often reused across different machines. If a serial isn't detected, you can enter one manually so your labels and notes are saved against that machine and reappear the next time its files come in on any drive.</p>
+    </details>
+
+    <details>
+        <summary>Do I need an internet connection to back up files?</summary>
+        <p>No. CNC Vault is built air-gap first: reading files off a USB drive never waits on a network connection. If you're offline, backups queue locally and upload automatically the next time the iPad or iPhone has a connection.</p>
+    </details>
+
+    <details>
+        <summary>Which cloud storage providers are supported?</summary>
+        <p>Dropbox, Google Drive, and Microsoft SharePoint. You connect your own account under Settings — CNC Vault doesn't host or store your files itself, it only relays them to the destination you authorize.</p>
+    </details>
+
+    <details>
+        <summary>How do I reconnect a cloud account if authorization expires?</summary>
+        <p>Open Settings → Cloud Destinations and reconnect the affected provider. Any backups that were queued while disconnected will resume automatically once you're signed back in.</p>
+    </details>
+
+    <details>
+        <summary>I need to send you a diagnostic report</summary>
+        <p>Use the diagnostic export option in the app to generate a package describing recent scans and transfers (it does not include your machine's G-code or program files). Attach it to an email to <a href="mailto:support@gpvsolutions.com">support@gpvsolutions.com</a> along with a description of what happened.</p>
+    </details>
+
+    <details>
+        <summary>Is CNC Vault a subscription?</summary>
+        <p>No. CNC Vault is a one-time App Store purchase — there's no subscription, license check, or feature gating.</p>
+    </details>
+
+    <h2>Still stuck?</h2>
+    <p>Email <a href="mailto:support@gpvsolutions.com">support@gpvsolutions.com</a> with your device model, iOS version, and a description of the issue, and we'll get back to you.</p>
+
+    <footer>
+        <p><a href="index.html">&larr; Back to Home</a> &middot; <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>
