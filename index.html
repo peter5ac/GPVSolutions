@@ -55,15 +55,9 @@
             margin-bottom: 2rem;
         }
 
-        .hero-section h2 {
-            margin: 0 0 0.75rem;
-            font-size: 1.8rem;
-            line-height: 1.2;
-            color: var(--primary);
-        }
-
         .hero-section p {
             max-width: 60ch;
+            font-size: 1.15rem;
             margin: 0 auto;
             text-wrap: pretty;
         }
@@ -74,39 +68,94 @@
             border-top: 1px solid var(--border);
         }
 
-        .policy-section h3 {
+        .compare-section {
+            margin-bottom: 3rem;
+        }
+
+        .compare-section h2,
+        .pricing-section h2,
+        .policy-section h2 {
             margin: 0 0 1.5rem;
             font-size: 1.4rem;
             line-height: 1.2;
             color: var(--primary);
         }
 
-        .plans-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem 3rem;
-            margin: 0 0 2rem;
+        .plans-table {
+            width: 100%;
+            margin: 0 0 1.5rem;
+            border-collapse: collapse;
+            table-layout: fixed;
         }
 
-        .plans-grid div {
-            padding-top: 1rem;
-            border-top: 2px solid var(--accent);
+        .plans-table th,
+        .plans-table td {
+            padding: 1rem 0.75rem;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
         }
 
-        .plans-grid dt {
-            margin-bottom: 0.25rem;
-            font-weight: 700;
+        .plans-table thead th {
+            border-bottom: 2px solid var(--primary);
+            font-size: 1.1rem;
             color: var(--primary);
         }
 
-        .plans-grid dd {
-            margin: 0;
-            max-width: 60ch;
+        .plans-table thead th.fleet {
+            border-bottom-color: var(--accent);
+            color: var(--accent);
         }
 
+        .plans-table tbody th {
+            width: 32%;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .plans-table td.fleet {
+            background-color: #EFF6FF;
+        }
+
+        .plans-table .no {
+            color: #64748B;
+        }
+
+        .plans-table .yes {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .plans-table svg {
+            flex: none;
+            width: 1em;
+            height: 1em;
+            stroke: var(--accent);
+        }
+
+        .plans-table small {
+            display: block;
+            margin-top: 0.15rem;
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #64748B;
+        }
+
+        .compare-section > p,
         .policy-section > p {
             max-width: 70ch;
             margin: 0;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip-path: inset(50%);
         }
 
         a {
@@ -167,22 +216,49 @@
                 margin-bottom: 1.5rem;
             }
 
-            .hero-section h2 {
-                font-size: 1.5rem;
-            }
-
             .policy-section {
                 margin-top: 3rem;
                 padding-top: 2rem;
             }
 
-            .policy-section h3 {
+            .compare-section h2,
+            .pricing-section h2,
+            .policy-section h2 {
                 font-size: 1.25rem;
                 margin-bottom: 1.25rem;
             }
 
-            .plans-grid {
-                gap: 1.5rem;
+            .plans-table thead td {
+                display: none;
+            }
+
+            .plans-table,
+            .plans-table thead,
+            .plans-table tbody {
+                display: block;
+            }
+
+            .plans-table tr {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .plans-table thead th {
+                border-bottom-width: 2px;
+            }
+
+            .plans-table tbody th,
+            .plans-table td {
+                border-bottom: 0;
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .plans-table tbody th {
+                grid-column: 1 / -1;
+                width: auto;
+                padding: 1rem 0.75rem 0.25rem;
             }
 
             .contact-box {
@@ -205,28 +281,35 @@
 
     <div class="container">
         <section class="hero-section">
-            <h2>Choose Your Plan</h2>
             <p>CNC Backup is a subscription app for iPad and iPhone that backs up CNC controller files from USB drives to Dropbox, Google Drive or SharePoint, even when the shop floor is offline.</p>
         </section>
 
-        <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-        <stripe-pricing-table pricing-table-id="prctbl_1UYGYJRRQgyeLbVDGSSF1JVD"
-        publishable-key="pk_live_51Txz4TRRQgyeLbVDjcvclPk71nk8FuPgLE66whUnfpc3ymWuk6MOsaTriy6uQt2qpFPwfPW4QoSf4fsJdfJip7LT007rdh4G5H">
-        </stripe-pricing-table>
+        <section class="compare-section" id="compare">
+            <h2>Compare plans</h2>
+            <table class="plans-table">
+                <caption class="sr-only">Individual and Fleet plans compared</caption>
+                <thead><tr><td></td><th scope="col">Individual</th><th scope="col" class="fleet">Fleet</th></tr></thead>
+                <tbody>
+                    <tr><th scope="row">Built for</th><td data-label="Individual">Solo operators and owners</td><td class="fleet" data-label="Fleet">Shops with many operators and devices<small>Unlimited seats</small></td></tr>
+                    <tr><th scope="row">Activation</th><td data-label="Individual">License key</td><td class="fleet" data-label="Fleet">License key or Microsoft SSO</td></tr>
+                    <tr><th scope="row">Microsoft SSO<small>Entra ID work accounts, no keys to hand out</small></th><td data-label="Individual"><span class="no">Not included</span></td><td class="fleet" data-label="Fleet"><span class="yes"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>Included</span></td></tr>
+                    <tr><th scope="row">Managed IT experience<small>Admin sets the SharePoint destination, folder naming and required labels</small></th><td data-label="Individual"><span class="no">Not included</span></td><td class="fleet" data-label="Fleet"><span class="yes"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>Optional</span></td></tr>
+                    <tr><th scope="row">Backup audit log</th><td data-label="Individual"><span class="no">Not included</span></td><td class="fleet" data-label="Fleet"><span class="yes"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>With managed</span></td></tr>
+                </tbody>
+            </table>
+            <p>Licenses are cached securely, so backups keep working offline.</p>
+        </section>
 
-        <section class="policy-section">
-            <h3>Plans, SSO &amp; Managed Fleet</h3>
-            <dl class="plans-grid">
-                <div><dt>Individual</dt><dd>One user, one subscription. Activate with the license key emailed after purchase.</dd></div>
-                <div><dt>Fleet</dt><dd>For shops with many operators and devices, with unlimited seats. Activate with a license key, or with SSO.</dd></div>
-                <div><dt>Single Sign-On</dt><dd>Fleet supports Microsoft Entra ID SSO. Your team signs in with work accounts, so there are no keys to distribute, and SharePoint uploads are authorized at the same time.</dd></div>
-                <div><dt>Managed Fleet</dt><dd>Admins set one SharePoint destination, folder naming and required labels for the whole organization, and review an audit log of backups. Operators just plug in and tap Upload.</dd></div>
-            </dl>
-            <p>Licenses are cached securely, so backups keep working offline. Interested in SSO or a managed setup? Email <a href="mailto:support@gpvsolutions.com">support@gpvsolutions.com</a>.</p>
+        <section class="pricing-section">
+            <h2>Choose your plan</h2>
+            <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+            <stripe-pricing-table pricing-table-id="prctbl_1UYGYJRRQgyeLbVDGSSF1JVD"
+            publishable-key="pk_live_51Txz4TRRQgyeLbVDjcvclPk71nk8FuPgLE66whUnfpc3ymWuk6MOsaTriy6uQt2qpFPwfPW4QoSf4fsJdfJip7LT007rdh4G5H">
+            </stripe-pricing-table>
         </section>
 
         <section class="policy-section">
-            <h3>Customer Service &amp; Support</h3>
+            <h2>Customer Service &amp; Support</h2>
             <div class="contact-box">
                 <p><strong>Support Email:</strong> support@gpvsolutions.com</p>
                 <p><strong>Operating Hours:</strong> Monday – Friday, 9:00 AM – 5:00 PM EST</p>
