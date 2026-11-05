@@ -25,73 +25,113 @@
         header {
             background-color: var(--primary);
             color: #FFFFFF;
-            padding: 2rem 1rem;
+            padding: 3rem 1.5rem;
             text-align: center;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.2rem;
+            font-size: clamp(1.8rem, 5vw, 2.4rem);
             letter-spacing: -0.02em;
+            line-height: 1.15;
         }
 
         header p {
-            margin-top: 0.5rem;
-            color: #94A3B8;
+            margin: 0.75rem auto 0;
+            max-width: 40ch;
+            color: #CBD5E1;
             font-size: 1.1rem;
+            text-wrap: balance;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 3rem 1.5rem;
+            padding: 3rem 1.5rem 1rem;
         }
 
         .hero-section {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .hero-section h2 {
+            margin: 0 0 0.75rem;
             font-size: 1.8rem;
+            line-height: 1.2;
             color: var(--primary);
         }
 
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .card {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            background-color: var(--bg-light);
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-
-        .pricing-card {
-            border: 2px solid var(--accent);
-            text-align: center;
-        }
-
-        .price {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin: 0.5rem 0;
+        .hero-section p {
+            max-width: 60ch;
+            margin: 0 auto;
+            text-wrap: pretty;
         }
 
         .policy-section {
             margin-top: 4rem;
-            padding-top: 2rem;
+            padding-top: 2.5rem;
             border-top: 1px solid var(--border);
+        }
+
+        .policy-section h3 {
+            margin: 0 0 1.5rem;
+            font-size: 1.4rem;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem 3rem;
+            margin: 0 0 2rem;
+        }
+
+        .plans-grid div {
+            padding-top: 1rem;
+            border-top: 2px solid var(--accent);
+        }
+
+        .plans-grid dt {
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .plans-grid dd {
+            margin: 0;
+            max-width: 60ch;
+        }
+
+        .policy-section > p {
+            max-width: 70ch;
+            margin: 0;
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        .contact-box {
+            background-color: #EFF6FF;
+            border: 1px solid #BFDBFE;
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .contact-box p {
+            margin: 0 0 0.5rem;
+        }
+
+        .contact-box p:last-child {
+            margin-bottom: 0;
         }
 
         footer {
@@ -102,14 +142,6 @@
             font-size: 0.9rem;
             color: #64748B;
             margin-top: 4rem;
-        }
-
-        .contact-box {
-            background-color: #EFF6FF;
-            border: 1px solid #BFDBFE;
-            border-radius: 8px;
-            padding: 1rem 1.5rem;
-            margin-top: 2rem;
         }
     </style>
 </head>
@@ -133,29 +165,17 @@
 
         <section class="policy-section">
             <h3>Plans, SSO &amp; Managed Fleet</h3>
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>Individual</h3>
-                    <p>One user, one subscription. Activate with the license key emailed after purchase.</p>
-                </div>
-                <div class="card">
-                    <h3>Fleet</h3>
-                    <p>For shops with many operators and devices, with unlimited seats. Activate with a license key, or with SSO.</p>
-                </div>
-                <div class="card">
-                    <h3>Single Sign-On</h3>
-                    <p>Fleet supports Microsoft Entra ID SSO. Your team signs in with work accounts, so there are no keys to distribute, and SharePoint uploads are authorized at the same time.</p>
-                </div>
-                <div class="card">
-                    <h3>Managed Fleet</h3>
-                    <p>Admins set one SharePoint destination, folder naming and required labels for the whole organization, and review an audit log of backups. Operators just plug in and tap Upload.</p>
-                </div>
-            </div>
+            <dl class="plans-grid">
+                <div><dt>Individual</dt><dd>One user, one subscription. Activate with the license key emailed after purchase.</dd></div>
+                <div><dt>Fleet</dt><dd>For shops with many operators and devices, with unlimited seats. Activate with a license key, or with SSO.</dd></div>
+                <div><dt>Single Sign-On</dt><dd>Fleet supports Microsoft Entra ID SSO. Your team signs in with work accounts, so there are no keys to distribute, and SharePoint uploads are authorized at the same time.</dd></div>
+                <div><dt>Managed Fleet</dt><dd>Admins set one SharePoint destination, folder naming and required labels for the whole organization, and review an audit log of backups. Operators just plug in and tap Upload.</dd></div>
+            </dl>
             <p>Licenses are cached securely, so backups keep working offline. Interested in SSO or a managed setup? Email <a href="mailto:support@gpvsolutions.com">support@gpvsolutions.com</a>.</p>
         </section>
 
         <section class="policy-section">
-            <h3>Customer Service & Support</h3>
+            <h3>Customer Service &amp; Support</h3>
             <div class="contact-box">
                 <p><strong>Support Email:</strong> support@gpvsolutions.com</p>
                 <p><strong>Operating Hours:</strong> Monday – Friday, 9:00 AM – 5:00 PM EST</p>
