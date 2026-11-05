@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support | CNC Vault</title>
+    <title>Support | CNC Backup</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -40,10 +40,10 @@
 </head>
 <body>
 
-    <h1>CNC Vault Support</h1>
+    <h1>CNC Backup Support</h1>
     <p><em>Last updated: September 12, 2026</em></p>
 
-    <p>CNC Vault backs up files from mounted USB drives to your Dropbox, Google Drive, or SharePoint account, built for CNC shop floors where network connectivity can't be relied on. If something isn't working the way you expect, start with the FAQ below or reach out directly.</p>
+    <p>CNC Backup backs up files from mounted USB drives to your Dropbox, Google Drive, or SharePoint account, built for CNC shop floors where network connectivity can't be relied on. If something isn't working the way you expect, start with the FAQ below or reach out directly.</p>
 
     <div class="contact-box">
         <p><strong>Support Email:</strong> <a href="mailto:support@gpvsolutions.com">support@gpvsolutions.com</a></p>
@@ -54,22 +54,22 @@
 
     <details>
         <summary>My USB drive isn't being detected</summary>
-        <p>CNC Vault reads from drives formatted with a file system iPadOS can mount (FAT32 or exFAT are the most reliable for USB sticks pulled from CNC controllers). Make sure the drive is fully inserted and, if you're using a USB-C hub or adapter, try connecting it directly. Nothing on the drive is ever modified — CNC Vault only reads files, so re-plugging it is always safe.</p>
+        <p>CNC Backup reads from drives formatted with a file system iPadOS can mount (FAT32 or exFAT are the most reliable for USB sticks pulled from CNC controllers). Make sure the drive is fully inserted and, if you're using a USB-C hub or adapter, try connecting it directly. Nothing on the drive is ever modified — CNC Backup only reads files, so re-plugging it is always safe.</p>
     </details>
 
     <details>
         <summary>The app didn't identify my machine correctly</summary>
-        <p>CNC Vault reads the manufacturer and serial number directly from the files on the drive every time it's mounted — it doesn't remember what was on a drive last time, since the same USB stick is often reused across different machines. If a serial isn't detected, you can enter one manually so your labels and notes are saved against that machine and reappear the next time its files come in on any drive.</p>
+        <p>CNC Backup reads the manufacturer and serial number directly from the files on the drive every time it's mounted — it doesn't remember what was on a drive last time, since the same USB stick is often reused across different machines. If a serial isn't detected, you can enter one manually so your labels and notes are saved against that machine and reappear the next time its files come in on any drive.</p>
     </details>
 
     <details>
         <summary>Do I need an internet connection to back up files?</summary>
-        <p>No. CNC Vault is built air-gap first: reading files off a USB drive never waits on a network connection. If you're offline, backups queue locally and upload automatically the next time the iPad or iPhone has a connection.</p>
+        <p>No. CNC Backup is built air-gap first: reading files off a USB drive never waits on a network connection. If you're offline, backups queue locally and upload automatically the next time the iPad or iPhone has a connection.</p>
     </details>
 
     <details>
         <summary>Which cloud storage providers are supported?</summary>
-        <p>Dropbox, Google Drive, and Microsoft SharePoint. You connect your own account under Settings — CNC Vault doesn't host or store your files itself, it only relays them to the destination you authorize.</p>
+        <p>Dropbox, Google Drive, and Microsoft SharePoint. You connect your own account under Settings — CNC Backup doesn't host or store your files itself, it only relays them to the destination you authorize.</p>
     </details>
 
     <details>
@@ -83,8 +83,33 @@
     </details>
 
     <details>
-        <summary>Is CNC Vault a subscription?</summary>
-        <p>No. CNC Vault is a one-time App Store purchase — there's no subscription, license check, or feature gating.</p>
+        <summary>Is CNC Backup a subscription?</summary>
+        <p>Yes. CNC Backup is licensed by subscription, purchased on our website (not in the app). After purchase you receive an email with a license key, an activation link and a QR code. Open the link or scan the code on your iPad or iPhone, or enter the key under Activate License. A license check never gets in the way of the shop floor: the app keeps working offline on a saved, signed license for a grace period, and reading a USB drive is never blocked.</p>
+    </details>
+
+    <details>
+        <summary>What's the difference between Individual and Fleet?</summary>
+        <p><strong>Individual</strong> is for a single user. <strong>Fleet</strong> is for shops and organizations with multiple operators and devices, with unlimited seats. Fleet can be activated with a license key, or with single sign-on (see below).</p>
+    </details>
+
+    <details>
+        <summary>Does CNC Backup support single sign-on (SSO)?</summary>
+        <p>Yes. The Fleet plan supports SSO with Microsoft Entra ID. We approve your organization's email domain, and your people sign in with their work Microsoft accounts. There are no license keys to hand out. Personal Microsoft accounts can't be used for SSO. Signing in also authorizes SharePoint uploads in the same step.</p>
+    </details>
+
+    <details>
+        <summary>What is a managed Fleet?</summary>
+        <p>A managed Fleet has one or more admins who set the organization's backup policy: the SharePoint site and folder that backups go to, how backup folders are named, and which labels are required. The policy is published to every device in the organization. Operators just plug in a drive and tap Upload, and the destination and naming are locked to the admin's policy. Admins can also review an audit log of backups across the organization. Contact <a href="mailto:support@gpvsolutions.com">support@gpvsolutions.com</a> to have your organization set up as managed.</p>
+    </details>
+
+    <details>
+        <summary>What if my Fleet isn't managed?</summary>
+        <p>Without an admin, each user chooses their own destination. Fleet users, whether on SSO or a license key, can connect Dropbox, Google Drive or SharePoint, and can connect several at once.</p>
+    </details>
+
+    <details>
+        <summary>In a managed Fleet, why can't I change the destination?</summary>
+        <p>Destination and folder naming are controlled by your admin. If you see "You don't have access to" a SharePoint site, ask your IT team to grant your account write access to it. A managed device needs the admin's policy to start a backup, and keeps working offline from the last policy it received.</p>
     </details>
 
     <h2>Still stuck?</h2>
