@@ -1,0 +1,67 @@
+// Floating "Ask a question" button + modal form. Posts to the GPV worker,
+// which relays the message by email via Resend (the key never touches this page).
+(function () {
+  var ENDPOINT = 'https://gpv-worker.peterjvacca.workers.dev/api/v1/contact';
+
+  var css = document.createElement('style');
+  css.textContent =
+    '.cf-fab{position:fixed;right:20px;bottom:20px;z-index:50;background:#2563EB;color:#fff;border:0;border-radius:999px;padding:12px 20px;font:600 15px system-ui,sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(15,23,42,.25)}' +
+    '.cf-fab:hover{background:#1d4ed8}.cf-fab:focus-visible,.cf-dlg button:focus-visible,.cf-dlg input:focus-visible,.cf-dlg textarea:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}' +
+    '.cf-dlg{border:0;border-radius:12px;padding:24px;width:min(420px,calc(100vw - 32px));font:15px system-ui,sans-serif;color:#334155;box-shadow:0 20px 50px rgba(15,23,42,.35)}' +
+    '.cf-dlg::backdrop{background:rgba(15,23,42,.5)}.cf-dlg h2{margin:0 0 4px;color:#0F172A;font-size:20px}.cf-dlg p{margin:0 0 14px;font-size:14px}' +
+    '.cf-dlg label{display:block;margin:10px 0 4px;font-weight:600;font-size:14px}' +
+    '.cf-dlg input,.cf-dlg textarea{width:100%;box-sizing:border-box;border:1px solid #E2E8F0;border-radius:8px;padding:9px 10px;font:inherit}' +
+    '.cf-dlg textarea{min-height:110px;resize:vertical}.cf-row{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}' +
+    '.cf-dlg button{border-radius:8px;padding:9px 16px;font:600 14px system-ui,sans-serif;cursor:pointer;border:1px solid #E2E8F0;background:#F8FAFC;color:#334155}' +
+    '.cf-dlg button[type=submit]{background:#2563EB;border-color:#2563EB;color:#fff}.cf-dlg button:disabled{opacity:.6;cursor:default}' +
+    '.cf-status{min-height:20px;margin-top:10px;font-size:14px}.cf-status.err{color:#b91c1c}.cf-status.ok{color:#15803d}' +
+    '.cf-hp{position:absolute;left:-9999px;height:0;overflow:hidden}';
+  document.head.appendChild(css);
+
+  var fab = document.createElement('button');
+  fab.className = 'cf-fab';
+  fab.type = 'button';
+  fab.textContent = 'Ask a question';
+
+  var dlg = document.createElement('dialog');
+  dlg.className = 'cf-dlg';
+  dlg.setAttribute('aria-labelledby', 'cf-title');
+  dlg.innerHTML =
+    '<form method="dialog" novalidate>' +
+    '<h2 id="cf-title">Ask a question</h2><p>Send us a message and we\'ll reply by email.</p>' +
+    '<label for="cf-name">Name</label><input id="cf-name" name="name" maxlength="100" autocomplete="name" required>' +
+    '<label for="cf-email">Email</label><input id="cf-email" name="email" type="email" maxlength="200" autocomplete="email" required>' +
+    '<label for="cf-msg">Question</label><textarea id="cf-msg" name="message" maxlength="4000" required></textarea>' +
+    '<div class="cf-hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>' +
+    '<div class="cf-status" role="status" aria-live="polite"></div>' +
+    '<div class="cf-row"><button type="button" class="cf-close">Close</button><button type="submit">Send</button></div>' +
+    '</form>';
+  document.body.appendChild(fab);
+  document.body.appendChild(dlg);
+
+  var form = dlg.querySelector('form');
+  var status = dlg.querySelector('.cf-status');
+  var send = dlg.querySelector('button[type=submit]');
+  function say(text, cls) { status.textContent = text; status.className = 'cf-status ' + (cls || ''); }
+
+  fab.addEventListener('click', function () { say(''); dlg.showModal(); form.name.focus(); });
+  dlg.querySelector('.cf-close').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { say('Please fill in your name, a valid email and your question.', 'err'); return; }
+    send.disabled = true; say('Sending…');
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: form.name.value, email: form.email.value, message: form.message.value, website: form.website.value })
+    }).then(function (r) {
+      if (r.status === 429) throw new Error('Too many messages — please try again in a minute.');
+      if (!r.ok) throw new Error('Sorry, that did not send. Please try again later.');
+      form.reset(); say('Thanks! Your message was sent.', 'ok');
+    }).catch(function (err) {
+      say(err instanceof TypeError ? 'Could not reach the server. Check your connection and try again.' : err.message, 'err');
+    }).then(function () { send.disabled = false; });
+  });
+})();
