@@ -4,7 +4,7 @@
   var ENDPOINT = 'https://gpv-worker.peterjvacca.workers.dev/api/v1/contact';
   // Public Cloudflare Turnstile site key (safe to commit). Replace the
   // placeholder with the real one from the Cloudflare dashboard.
-  var TURNSTILE_SITE_KEY = 'REPLACE_WITH_TURNSTILE_SITE_KEY';
+  var TURNSTILE_SITE_KEY = '0x4AAAAAAF2WydXAHMcDn1bP';
 
   var css = document.createElement('style');
   css.textContent =
