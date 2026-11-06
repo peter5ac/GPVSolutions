@@ -2,6 +2,9 @@
 // which relays the message by email via Resend (the key never touches this page).
 (function () {
   var ENDPOINT = 'https://gpv-worker.peterjvacca.workers.dev/api/v1/contact';
+  // Public Cloudflare Turnstile site key (safe to commit). Replace the
+  // placeholder with the real one from the Cloudflare dashboard.
+  var TURNSTILE_SITE_KEY = 'REPLACE_WITH_TURNSTILE_SITE_KEY';
 
   var css = document.createElement('style');
   css.textContent =
@@ -33,6 +36,7 @@
     '<label for="cf-email">Email</label><input id="cf-email" name="email" type="email" maxlength="200" autocomplete="email" required>' +
     '<label for="cf-msg">Question</label><textarea id="cf-msg" name="message" maxlength="4000" required></textarea>' +
     '<div class="cf-hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>' +
+    '<div class="cf-captcha"></div>' +
     '<div class="cf-status" role="status" aria-live="polite"></div>' +
     '<div class="cf-row"><button type="button" class="cf-close">Close</button><button type="submit">Send</button></div>' +
     '</form>';
@@ -44,24 +48,45 @@
   var send = dlg.querySelector('button[type=submit]');
   function say(text, cls) { status.textContent = text; status.className = 'cf-status ' + (cls || ''); }
 
-  fab.addEventListener('click', function () { say(''); dlg.showModal(); form.name.focus(); });
+  var widgetId = null, token = '';
+  function loadCaptcha() {
+    if (window.turnstile) return renderCaptcha();
+    var sc = document.createElement('script');
+    sc.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    sc.async = true; sc.onload = renderCaptcha;
+    document.head.appendChild(sc);
+  }
+  function renderCaptcha() {
+    if (widgetId !== null || !window.turnstile) return;
+    widgetId = window.turnstile.render(dlg.querySelector('.cf-captcha'), {
+      sitekey: TURNSTILE_SITE_KEY,
+      callback: function (t) { token = t; },
+      'expired-callback': function () { token = ''; },
+      'error-callback': function () { token = ''; }
+    });
+  }
+  function resetCaptcha() { token = ''; if (widgetId !== null) window.turnstile.reset(widgetId); }
+
+  fab.addEventListener('click', function () { say(''); dlg.showModal(); form.name.focus(); loadCaptcha(); });
   dlg.querySelector('.cf-close').addEventListener('click', function () { dlg.close(); });
   dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!form.checkValidity()) { say('Please fill in your name, a valid email and your question.', 'err'); return; }
+    if (!token) { say('Please complete the verification check.', 'err'); return; }
     send.disabled = true; say('Sending…');
     fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: form.name.value, email: form.email.value, message: form.message.value, website: form.website.value })
+      body: JSON.stringify({ name: form.name.value, email: form.email.value, message: form.message.value, website: form.website.value, turnstileToken: token })
     }).then(function (r) {
+      if (r.status === 403 || (r.status === 400)) { resetCaptcha(); }
       if (r.status === 429) throw new Error('Too many messages — please try again in a minute.');
       if (!r.ok) throw new Error('Sorry, that did not send. Please try again later.');
       form.reset(); say('Thanks! Your message was sent.', 'ok');
     }).catch(function (err) {
       say(err instanceof TypeError ? 'Could not reach the server. Check your connection and try again.' : err.message, 'err');
-    }).then(function () { send.disabled = false; });
+    }).then(function () { resetCaptcha(); send.disabled = false; });
   });
 })();
