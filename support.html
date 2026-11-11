@@ -4,136 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support | CNC Backup</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        h1 { border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
-        h2 { margin-top: 1.5rem; }
-        footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #eee; font-size: 0.9rem; color: #666; }
-        a { color: #0366d6; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .contact-box {
-            background-color: #EFF6FF;
-            border: 1px solid #BFDBFE;
-            border-radius: 8px;
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-        }
-        details {
-            margin-bottom: 1rem;
-            padding: 0.75rem 1rem;
-            border: 1px solid #eee;
-            border-radius: 8px;
-        }
-        summary {
-            font-weight: 600;
-            cursor: pointer;
-        }
-        details p { margin-bottom: 0; }
-    </style>
+    <link rel="preload" href="fonts/HankenGrotesk.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="site.css">
+    <script>try{if(localStorage.getItem("grid")==="off")document.documentElement.dataset.grid="off"}catch(e){}</script>
 </head>
 <body>
+    <div class="sheet">
+        <div class="masthead">
+            <a class="wordmark" href="index.html">GPV Solutions</a>
+            <nav aria-label="Site">
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+        </div>
+        <header class="page-title">
+            <h1>CNC Backup Support</h1>
+            <p>Last updated: November 10, 2026</p>
+            <span class="bar" aria-hidden="true"></span>
+        </header>
+        <main>
+        <div class="doc-body">
+        <p>CNC Backup backs up files from mounted USB drives to your Dropbox, Google Drive, or SharePoint account, built for CNC shop floors where network connectivity can't be relied on. If something isn't working the way you expect, start with the FAQ below or reach out directly.</p>
 
-    <h1>CNC Backup Support</h1>
-    <p><em>Last updated: November 10, 2026</em></p>
-
-    <p>CNC Backup backs up files from mounted USB drives to your Dropbox, Google Drive, or SharePoint account, built for CNC shop floors where network connectivity can't be relied on. If something isn't working the way you expect, start with the FAQ below or reach out directly.</p>
-
-    <div class="contact-box">
+        <div class="callout">
         <p><strong>Support:</strong> Use the <strong>Ask a question</strong> button at the bottom right of this page.</p>
         <p><strong>Response Time:</strong> We aim to reply within 1–2 business days, Monday – Friday.</p>
-    </div>
+        </div>
 
-    <h2>Frequently Asked Questions</h2>
+        <h2>Frequently Asked Questions</h2>
 
-    <details>
+        <details>
         <summary>My USB drive isn't being detected</summary>
         <p>CNC Backup reads from drives formatted with a file system iPadOS can mount (FAT32 or exFAT are the most reliable for USB sticks pulled from CNC controllers). Make sure the drive is fully inserted and, if you're using a USB-C hub or adapter, try connecting it directly. Nothing on the drive is ever modified — CNC Backup only reads files, so re-plugging it is always safe.</p>
-    </details>
+        </details>
 
-    <details>
+        <details>
         <summary>The app didn't identify my machine correctly</summary>
         <p>CNC Backup reads the manufacturer and serial number directly from the files on the drive every time it's mounted — it doesn't remember what was on a drive last time, since the same USB stick is often reused across different machines. If a serial isn't detected, you can enter one manually so your labels and notes are saved against that machine and reappear the next time its files come in on any drive.</p>
-    </details>
+        </details>
 
-    <details>
+        <details>
         <summary>Which files get backed up?</summary>
         <p>CNC Backup copies the programs, parameters and backup files it recognizes for the machine on the drive: Haas, Fanuc, Siemens, Heidenhain, Mazak, Okuma, Hurco, LinuxCNC and PathPilot, FluidNC and Grbl, Mach3 and Mach4, Duet and Masso. Files with no extension, such as Fanuc <code>O0001</code> programs, are included when their contents match. Files larger than 50&nbsp;MB, hidden files, and archives and documents such as ZIP, PDF, Office, image and video files are skipped. Nothing on the drive is ever changed.</p>
-    </details>
+        </details>
 
-    <details>
+        <details>
         <summary>Do I need an internet connection to back up files?</summary>
         <p>No. CNC Backup is built air-gap first: reading files off a USB drive never waits on a network connection. If you're offline, tap <strong>Start Backup</strong> anyway: files are copied to the device and upload automatically the next time the iPad or iPhone has a connection. You do need a connected cloud account first, which you set up while online.</p>
-    </details>
+        </details>
 
-    <details>
+        <details>
         <summary>How do I know the backup matches my files?</summary>
         <p>After each file uploads, the app compares the cloud copy with the one it read from the drive. SharePoint and Google Drive report a checksum, which is compared with the file's own, and Dropbox reports a file size, which is compared. A copy that doesn't match is deleted where the provider allows it and uploaded again, and a file that keeps failing is shown as failed rather than as backed up.</p>
-    </details>
+        </details>
 
-    <details>
+        <details>
         <summary>Which cloud storage providers are supported?</summary>
         <p>SharePoint (Microsoft 365), Google Drive and Dropbox. You connect your own account under Cloud Storage. CNC Backup doesn't host or store your files itself, it only sends them to the destination you authorize.</p>
-    </details>
+        </details>
 
-    <details>
+        <details>
         <summary>How do I reconnect a cloud account if authorization expires?</summary>
         <p>Open Cloud Storage and reconnect the affected provider. Any backups that were queued while disconnected resume automatically once you're signed back in.</p>
-    </details>
+        </details>
 
-    <details>
+        <details>
         <summary>Something went wrong during a backup</summary>
         <p>The dashboard shows what failed and offers a retry. If it keeps happening, use the <strong>Ask a question</strong> button at the bottom right of this page and tell us what the screen said, the controller make and model, and your device and iOS version. Don't send program files by email.</p>
-    </details>
+        </details>
 
-    <details>
+        <details>
         <summary>Is CNC Backup a subscription?</summary>
         <p>Yes. CNC Backup is licensed by subscription, purchased on our website (not in the app). An Individual license is for one device. After purchase you receive an email with a license key, an activation link and a QR code. Open the link or scan the code on your iPad or iPhone, or enter the key on the <strong>Your Plan</strong> screen. A license check never gets in the way of the shop floor: the app keeps working offline on a saved, signed license for a grace period, and reading a USB drive is never blocked.</p>
-    </details>
+        </details>
 
-    <details>
+        <details>
         <summary>What's the difference between Individual and Fleet?</summary>
         <p><strong>Individual</strong> is for a single user. <strong>Fleet</strong> is for shops and organizations with multiple operators and devices, with unlimited seats. Fleet can be activated with a license key, or with single sign-on (see below).</p>
-    </details>
+        </details>
 
-    <details>
+        <details>
         <summary>Does CNC Backup support single sign-on (SSO)?</summary>
         <p>Yes. The Fleet plan supports SSO with Microsoft Entra ID. We approve your organization's email domain, and your people sign in with their work Microsoft accounts. There are no license keys to hand out. Personal Microsoft accounts can't be used for SSO. Signing in also authorizes SharePoint uploads in the same step.</p>
-    </details>
+        </details>
 
-    <details>
+        <details>
         <summary>I turned on SSO at checkout. Why can't anyone sign in yet?</summary>
         <p>We email a verification link to the address you bought with, to confirm you speak for your organization's domain. Open it and tap <strong>Verify</strong>. Until then nobody on that domain can sign in, and their devices can't upload. The link works for 7 days. If it didn't arrive, check spam, or use the <strong>Ask a question</strong> button and we'll verify the domain or send a new link.</p>
-    </details>
+        </details>
 
-    <details>
+        <details>
         <summary>What is a managed Fleet?</summary>
         <p>A managed Fleet has one or more admins who set the organization's backup policy: the SharePoint site and folder that backups go to, how backup folders are named, and which labels are required. The policy is published to every device in the organization. Operators just plug in a drive and tap <strong>Start Backup</strong>, and the destination and naming are locked to the admin's policy. Admins can also review an audit log of backups across the organization. Use the <strong>Ask a question</strong> button at the bottom right of this page to have your organization set up as managed.</p>
-    </details>
+        </details>
 
-    <details>
+        <details>
         <summary>What if my Fleet isn't managed?</summary>
         <p>Without an admin, each user chooses their own destination. Fleet users, whether on SSO or a license key, can connect Dropbox, Google Drive or SharePoint, and can connect several at once.</p>
-    </details>
+        </details>
 
-    <details>
+        <details>
         <summary>In a managed Fleet, why can't I change the destination?</summary>
         <p>Destination and folder naming are controlled by your admin. If you see "You don't have access to" a SharePoint site, ask your IT team to grant your account write access to it. A managed device needs the admin's policy to start a backup, and keeps working offline from the last policy it received.</p>
-    </details>
+        </details>
 
-    <h2>Still stuck?</h2>
-    <p>Use the <strong>Ask a question</strong> button at the bottom right of this page and include your device model, iOS version, and a description of the issue. We'll reply by email.</p>
+        <h2>Still stuck?</h2>
+        <p>Use the <strong>Ask a question</strong> button at the bottom right of this page and include your device model, iOS version, and a description of the issue. We'll reply by email.</p>
 
-    <footer>
-        <p><a href="index.html">&larr; Back to Home</a> &middot; <a href="privacy.html">Privacy Policy</a></p>
+    
+        </div>
+        </main>
+    </div>
+    <footer class="site-foot">
+        <div class="foot-in">
+            <nav aria-label="Footer"><a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a></nav>
+            <p>&copy; 2026 GPV Solutions. All rights reserved.</p>
+            <p>GPV Solutions LLC | Industrial Software Systems</p>
+        </div>
     </footer>
-
     <script src="contact.js" defer></script>
 </body>
 </html>
