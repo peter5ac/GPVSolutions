@@ -83,7 +83,7 @@ a:hover { color: var(--navy); }
 .store-badge img { display: block; height: 50px; width: auto; }
 .store-badge:hover { opacity: 0.85; }
 .store-badge--top img { height: 40px; }
-.store-badge--hero { display: none; }
+.hero .store-badge--hero { display: none; }
 .topbar-right { display: flex; align-items: center; gap: 1rem; }
 
 /* The "how it works" card */
@@ -223,6 +223,8 @@ details > p { margin: 0; padding: 1rem 1.1rem 1.2rem; border-top: 1px solid var(
 
 /* ---------- Small screens ---------- */
 @media (max-width: 860px) {
+    .topbar .store-badge--top { display: none; }
+    .hero .store-badge--hero { display: inline-flex; }
     .hero::after { top: 0; height: 100%; left: 0; width: 100%; aspect-ratio: auto; transform: none; background-size: cover; background-position: 70% 40%; opacity: 0.55; -webkit-mask-image: none; mask-image: none; }
     .hero-inner { grid-template-columns: minmax(0, 1fr); gap: 3.5rem; padding: 3rem 1.25rem 4rem; }
     .tag { max-width: 32rem; }
@@ -232,8 +234,6 @@ details > p { margin: 0; padding: 1rem 1.1rem 1.2rem; border-top: 1px solid var(
     .topbar-inner { padding: 0.5rem 1rem; }
     .wordmark { font-size: 1.15rem; }
     .topbar nav a { padding: 0.9rem 0.5rem; font-size: 0.95rem; }
-    .store-badge--top { display: none; }
-    .store-badge--hero { display: inline-flex; }
     .wrap, .doc { padding-left: 1rem; padding-right: 1rem; }
     .wrap { padding-top: 2.5rem; }
     .sign { margin-bottom: 2rem; }
