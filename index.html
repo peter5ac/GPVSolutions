@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CNC Backup | GPV Solutions</title>
     <meta name="description" content="CNC Backup is a subscription app for iPad and iPhone that backs up your CNC machines' controller files to SharePoint, Google Drive, or Dropbox, even when the shop floor is offline.">
-    <link rel="preload" href="fonts/BarlowCondensed-800.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Barlow-800.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="site.css">
 </head>
 <body>
 <!--
-THESIS: Shop-floor safety signage. The site is the sign every machinist already trusts, a header band, a message panel, a tag on a hole. It refuses the dark-navy hero with a blue button and a grid of feature cards.
-OWN-WORLD: Safety yellow field, ink black bands, white message panels, one NOTICE blue for Fleet, concrete ground. Barlow Condensed caps for signal words, Barlow for messages. Hazard stripe as the seam above hero and footer. Pictograms boxed in 3px black.
-STORY: The visitor learns that one tap copies a machine's files to a verified cloud copy even offline, sees Individual vs Fleet in one table, and picks a plan.
-FIRST VIEWPORT: Yellow field. Left: 6rem condensed headline, lede, black Choose-your-plan button. Right: a white tag hanging from a hole, blue NOTICE band, three pictogram steps (plug in, tap, verified copy).
-FORM: ANSI-style signage and tags, assigned roll 6 of 7, seed key a339f99c.
+THESIS: Industrial blue. Software for modern CNC manufacturing: deep navy field, electric-blue emphasis, white and brushed-steel panels, no machine photography. It refuses the safety-signage costume and the generic light SaaS page.
+OWN-WORLD: Navy #07162B with diagonal blue facets at the left edge, electric blue #2A9DFF for one word and for focus, white-to-steel gradient cards, blue gradient header bands, Barlow 800 caps for headings and Barlow for messages.
+STORY: The visitor learns that one tap copies a machine's files to a verified cloud copy even offline, sees Individual vs Fleet in one table, and picks a plan from the picker, which leads the page body.
+FIRST VIEWPORT: Navy hero. Left: five-rem caps headline with MACHINE in electric blue, lede, blue Choose-your-plan button, Compare plans link. Right: a steel-white How it works card with a cloud badge, three icon steps and a footer band.
+FORM: Industrial-blue direction from the user's reference mockup. User-pinned, so no concept roll was run by design.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
 -->
 
@@ -25,7 +25,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
     <div class="topbar">
         <div class="topbar-inner">
-            <a class="wordmark" href="index.html">GPV Solutions</a>
+            <a class="wordmark" href="index.html">GPV <span>Solutions</span></a>
             <nav aria-label="Site">
                 <a href="support.html">Support</a>
                 <a href="privacy.html">Privacy</a>
@@ -37,7 +37,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <section class="hero">
             <div class="hero-inner">
                 <div>
-                    <h1>Back up the machine in one tap</h1>
+                    <h1>Back up the <em>machine</em> in one tap</h1>
                     <p class="lede">CNC Backup is a subscription app for iPad and iPhone that backs up your CNC machines' controller files to SharePoint, Google Drive, or Dropbox, even when the shop floor is offline.</p>
                     <div class="hero-actions">
                         <a class="btn" href="#plans">Choose your plan <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M5 13l7 7 7-7"/></svg></a>
@@ -46,18 +46,19 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
                 </div>
 
                 <aside class="tag" aria-labelledby="tag-title">
+                    <span class="tag-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17.5A4.5 4.5 0 0 1 6.5 8.6 6 6 0 0 1 18 9.5a4 4 0 0 1-.5 8"/><path d="M12 11v8M9 16l3 3 3-3"/></svg></span>
                     <h2 class="tag-head" id="tag-title">How it works</h2>
                     <ol class="steps">
                         <li>
-                            <span class="pict"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="8" width="19" height="8" rx="1.5"/><path d="M2.5 10.5H.5v3h2M6 8v8M10 11.5h8M10 13.5h5"/></svg></span>
+                            <span class="pict"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M6 10.5h8M6 13.5h4"/><circle cx="18" cy="12" r="1.2"/></svg></span>
                             <div><strong>Plug in the drive</strong><span>Read straight from the controller&rsquo;s USB stick. Nothing on it is ever changed.</span></div>
                         </li>
                         <li>
-                            <span class="pict"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="2" width="14" height="19" rx="2.5"/><path d="M8 18h4M14.5 13.5V9.2a1.4 1.4 0 0 1 2.8 0v4.3l3-.8c1-.3 1.8.8 1.2 1.7L19.5 21h-5l-2.2-3.4"/></svg></span>
+                            <span class="pict"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="7" r="4" stroke-dasharray="2 2.4"/><path d="M9.5 9.5V20l3-3 2 4.2 2.2-1-2-4.2H19z"/></svg></span>
                             <div><strong>Tap Start Backup</strong><span>Programs, parameters and backup files are copied. Offline? They upload when a connection returns.</span></div>
                         </li>
                         <li>
-                            <span class="pict"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 19A4.5 4.5 0 0 1 6 10 6 6 0 0 1 17.6 8.8 4.6 4.6 0 0 1 17.5 19z"/><path d="M9 13.5l2.2 2.2L15.5 11"/></svg></span>
+                            <span class="pict"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 19A4.5 4.5 0 0 1 6 10 6 6 0 0 1 17.6 8.8 4.6 4.6 0 0 1 17.5 19z"/><path d="M12 16v-5M9.5 13l2.5-2.5 2.5 2.5"/></svg></span>
                             <div><strong>Checked in your cloud</strong><span>Each upload is verified against what your provider reports.</span></div>
                         </li>
                     </ol>
@@ -65,9 +66,19 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
                 </aside>
             </div>
         </section>
-        <div class="hazard" aria-hidden="true"></div>
 
         <div class="wrap">
+            <section class="sign picker" id="plans" aria-labelledby="plans-h">
+                <h2 id="plans-h">Choose your plan</h2>
+                <div class="stripe-slot">
+                    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+                    <stripe-pricing-table pricing-table-id="prctbl_1UYGYJRRQgyeLbVDGSSF1JVD"
+                    publishable-key="pk_live_51Txz4TRRQgyeLbVDjcvclPk71nk8FuPgLE66whUnfpc3ymWuk6MOsaTriy6uQt2qpFPwfPW4QoSf4fsJdfJip7LT007rdh4G5H">
+                    </stripe-pricing-table>
+                </div>
+                <p class="picker-note"><a href="#compare">Compare Individual and Fleet</a></p>
+            </section>
+
             <section class="sign" id="compare" aria-labelledby="compare-h">
                 <h2 id="compare-h">Compare plans</h2>
                 <div class="includes">
@@ -78,28 +89,18 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
                         <li><strong>Dynamic folder naming</strong><span>Pick your folder format once. Every backup fills in the details from the machine</span></li>
                         <li><strong>Upload verification</strong><span>After each upload, the app checks the cloud copy against the checksum and size your provider reports. Dropbox, the third option, is checked by file size.</span></li></ul>
                 </div>
-                <table class="plans-table">
+                <table class="plans-table" role="table">
                     <caption class="sr-only">Individual and Fleet plans compared</caption>
-                    <thead><tr><td></td><th scope="col">Individual</th><th scope="col" class="fleet">Fleet</th></tr></thead>
-                    <tbody>
-                        <tr><th scope="row">Built for</th><td data-label="Individual">Solo operators and owners<small>One device</small></td><td class="fleet" data-label="Fleet">Shops with many operators and devices<small>Unlimited seats</small></td></tr>
-                        <tr><th scope="row">Activation</th><td data-label="Individual">License key</td><td class="fleet" data-label="Fleet">License key or Microsoft SSO<small>Your domain is verified before anyone can sign in</small></td></tr>
-                        <tr><th scope="row">Microsoft SSO<small>Microsoft Entra ID work accounts, no keys to hand out</small></th><td data-label="Individual"><span class="no"><svg class="mark off" aria-hidden="true"><use href="#no"/></svg>Not included</span></td><td class="fleet" data-label="Fleet"><span class="yes"><svg class="mark" aria-hidden="true"><use href="#yes"/></svg>Included</span></td></tr>
-                        <tr><th scope="row">Managed IT experience<small>Admin sets the SharePoint destination, folder naming and required labels</small></th><td data-label="Individual"><span class="no"><svg class="mark off" aria-hidden="true"><use href="#no"/></svg>Not included</span></td><td class="fleet" data-label="Fleet"><span class="yes"><svg class="mark" aria-hidden="true"><use href="#yes"/></svg>Optional</span></td></tr>
-                        <tr><th scope="row">Backup audit log</th><td data-label="Individual"><span class="no"><svg class="mark off" aria-hidden="true"><use href="#no"/></svg>Not included</span></td><td class="fleet" data-label="Fleet"><span class="yes"><svg class="mark" aria-hidden="true"><use href="#yes"/></svg>With managed</span></td></tr>
+                    <thead role="rowgroup"><tr role="row"><td role="presentation"></td><th role="columnheader" scope="col">Individual</th><th role="columnheader" scope="col" class="fleet">Fleet</th></tr></thead>
+                    <tbody role="rowgroup">
+                        <tr role="row"><th role="rowheader" scope="row">Built for</th><td role="cell">Solo operators and owners<small>One device</small></td><td role="cell" class="fleet">Shops with many operators and devices<small>Unlimited seats</small></td></tr>
+                        <tr role="row"><th role="rowheader" scope="row">Activation</th><td role="cell">License key</td><td role="cell" class="fleet">License key or Microsoft SSO<small>Your domain is verified before anyone can sign in</small></td></tr>
+                        <tr role="row"><th role="rowheader" scope="row">Microsoft SSO<small>Microsoft Entra ID work accounts, no keys to hand out</small></th><td role="cell"><span class="no"><svg class="mark off" aria-hidden="true"><use href="#no"/></svg>Not included</span></td><td role="cell" class="fleet"><span class="yes"><svg class="mark" aria-hidden="true"><use href="#yes"/></svg>Included</span></td></tr>
+                        <tr role="row"><th role="rowheader" scope="row">Managed IT experience<small>Admin sets the SharePoint destination, folder naming and required labels</small></th><td role="cell"><span class="no"><svg class="mark off" aria-hidden="true"><use href="#no"/></svg>Not included</span></td><td role="cell" class="fleet"><span class="yes"><svg class="mark" aria-hidden="true"><use href="#yes"/></svg>Optional</span></td></tr>
+                        <tr role="row"><th role="rowheader" scope="row">Backup audit log</th><td role="cell"><span class="no"><svg class="mark off" aria-hidden="true"><use href="#no"/></svg>Not included</span></td><td role="cell" class="fleet"><span class="yes"><svg class="mark" aria-hidden="true"><use href="#yes"/></svg>With managed</span></td></tr>
                     </tbody>
                 </table>
                 <p class="table-note">Licenses are cached securely on the device, so backups keep working offline.</p>
-            </section>
-
-            <section class="sign" id="plans" aria-labelledby="plans-h">
-                <h2 id="plans-h">Choose your plan</h2>
-                <div class="stripe-slot">
-                    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-                    <stripe-pricing-table pricing-table-id="prctbl_1UYGYJRRQgyeLbVDGSSF1JVD"
-                    publishable-key="pk_live_51Txz4TRRQgyeLbVDjcvclPk71nk8FuPgLE66whUnfpc3ymWuk6MOsaTriy6uQt2qpFPwfPW4QoSf4fsJdfJip7LT007rdh4G5H">
-                    </stripe-pricing-table>
-                </div>
             </section>
 
             <section class="sign hours" aria-labelledby="support-h">

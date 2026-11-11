@@ -1,226 +1,338 @@
 ---
-name: CNC Backup (GPV Solutions)
-description: Shop-floor safety signage for an offline-tolerant CNC file backup app.
+name: CNC Backup by GPV Solutions
+description: Industrial blue. Deep navy field, electric-blue emphasis, white and brushed-steel panels, no machine photography.
 colors:
-  safety-yellow: "#FFD100"
-  ink: "#111111"
+  navy: "#07162B"
+  navy-2: "#0B2447"
+  navy-glow: "#16335F"
+  brand-blue: "#0B5CAD"
+  electric: "#2A9DFF"
+  electric-deep: "#0A6FD6"
+  band-top: "#0F6BD0"
+  band-bottom: "#0B4FA3"
+  button-top: "#1B86F0"
+  button-bottom: "#0A5FC4"
+  button-hover-top: "#3A9BFF"
+  button-hover-bottom: "#0B6AD8"
+  facet-light: "#0B63D6"
+  facet-mid: "#0A4AA6"
+  facet-dark: "#0B2F73"
+  steel: "#DCE3EC"
+  steel-light: "#F1F4F8"
+  steel-foot-top: "#E4EAF2"
+  steel-foot-bottom: "#D2DAE6"
+  fleet-wash: "#EAF3FD"
+  ground: "#E9EEF4"
   white: "#FFFFFF"
-  notice-blue: "#0B5CAD"
-  notice-wash: "#E6EFF9"
-  concrete: "#E2E2DC"
-  muted-graphite: "#4A4A44"
-  foot-text: "#D8D8D2"
+  ink: "#0B1220"
+  muted: "#4A566B"
+  edge: "#C3CFDF"
+  on-navy-lede: "#E3EAF4"
+  on-navy-subtitle: "#C9D6EA"
+  on-navy-foot: "#C2CCDB"
 typography:
   display:
-    fontFamily: "Barlow Condensed, Arial Narrow, sans-serif"
-    fontSize: "clamp(3.5rem, 9vw, 6rem)"
+    fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(2.75rem, 6.4vw, 4.75rem)"
     fontWeight: 800
-    lineHeight: 0.9
-    letterSpacing: "-0.01em"
-  headline:
-    fontFamily: "Barlow Condensed, Arial Narrow, sans-serif"
-    fontSize: "2rem"
+    lineHeight: 1
+    letterSpacing: "-0.005em"
+  page-title:
+    fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(2.5rem, 6vw, 4rem)"
     fontWeight: 800
-    lineHeight: 1.05
-    letterSpacing: "0.1em"
-  title:
-    fontFamily: "Barlow Condensed, Arial Narrow, sans-serif"
+    lineHeight: 1
+  card-head:
+    fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "2.1rem"
+    fontWeight: 800
+    lineHeight: 1
+    letterSpacing: "0.01em"
+  band:
+    fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "1.45rem"
+    fontWeight: 800
+    lineHeight: 1.1
+    letterSpacing: "0.02em"
+  table-head:
+    fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "1.35rem"
+    fontWeight: 800
+    lineHeight: 1
+    letterSpacing: "0.03em"
+  doc-heading:
+    fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "1.5rem"
+    fontWeight: 800
+    lineHeight: 1.1
+    letterSpacing: "0.02em"
+  wordmark:
+    fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
     fontSize: "1.5rem"
     fontWeight: 800
     lineHeight: 1
-    letterSpacing: "0.06em"
+    letterSpacing: "0.01em"
+  title:
+    fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "1.15rem"
+    fontWeight: 800
+    lineHeight: 1.1
+    letterSpacing: "0.01em"
+  button:
+    fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "1.1rem"
+    fontWeight: 800
+    lineHeight: 1
+    letterSpacing: "0.03em"
+  label:
+    fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "0.95rem"
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: "0.04em"
+  lede:
+    fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "1.2rem"
+    fontWeight: 400
+    lineHeight: 1.55
   body:
     fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
     fontSize: "1.0625rem"
     fontWeight: 400
     lineHeight: 1.6
-  label:
-    fontFamily: "Barlow Condensed, Arial Narrow, sans-serif"
-    fontSize: "1.05rem"
-    fontWeight: 700
-    lineHeight: 1
-    letterSpacing: "0.08em"
-  lede:
-    fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
-    fontSize: "1.25rem"
-    fontWeight: 400
-    lineHeight: 1.5
   small:
     fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
     fontSize: "0.95rem"
     fontWeight: 400
     lineHeight: 1.4
 rounded:
-  sm: "3px"
-  md: "6px"
-  lg: "14px"
-  tag-inner: "10px"
+  xs: "3px"
+  button: "6px"
+  sm: "8px"
+  panel: "12px"
+  card: "14px"
+  round: "50%"
 spacing:
-  xs: "0.5rem"
-  sm: "1rem"
-  md: "1.5rem"
-  lg: "2.5rem"
-  xl: "4rem"
+  xs: "0.25rem"
+  sm: "0.75rem"
+  md: "1rem"
+  lg: "1.5rem"
+  xl: "2.5rem"
+  section: "4rem"
+  container: "1120px"
 components:
   button-primary:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.safety-yellow}"
-    typography: "{typography.title}"
-    rounded: "{rounded.sm}"
+    backgroundColor: "{colors.button-bottom}"
+    textColor: "{colors.white}"
+    typography: "{typography.button}"
+    rounded: "{rounded.button}"
     padding: "0.9rem 1.5rem 0.9rem 1.75rem"
     height: "56px"
   button-primary-hover:
-    backgroundColor: "{colors.ink}"
+    backgroundColor: "{colors.button-hover-bottom}"
     textColor: "{colors.white}"
-  sign-header:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.safety-yellow}"
-    typography: "{typography.headline}"
-    padding: "0.7rem 3rem 0.55rem"
-  sign-panel:
+  text-link:
+    textColor: "{colors.white}"
+    typography: "{typography.label}"
+    padding: "1rem 0"
+  topbar:
+    backgroundColor: "{colors.navy}"
+    textColor: "{colors.white}"
+    padding: "0.9rem 1.5rem"
+  hero:
+    backgroundColor: "{colors.navy}"
+    textColor: "{colors.white}"
+    padding: "4.5rem 1.5rem 5rem"
+  how-card:
+    backgroundColor: "{colors.steel}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.card}"
+  how-card-head:
+    backgroundColor: "{colors.band-bottom}"
+    textColor: "{colors.white}"
+    typography: "{typography.card-head}"
+    padding: "2.1rem 1rem 0.85rem"
+  how-card-badge:
+    backgroundColor: "{colors.electric-deep}"
+    textColor: "{colors.white}"
+    rounded: "{rounded.round}"
+    size: "56px"
+  panel:
     backgroundColor: "{colors.white}"
     textColor: "{colors.ink}"
-    rounded: "0"
+    rounded: "{rounded.panel}"
     padding: "1.5rem"
-  tag-head:
-    backgroundColor: "{colors.notice-blue}"
+  panel-band:
+    backgroundColor: "{colors.band-bottom}"
     textColor: "{colors.white}"
-    rounded: "10px 10px 0 0"
-  pictogram:
-    backgroundColor: "{colors.safety-yellow}"
+    typography: "{typography.band}"
+    padding: "0.95rem 1.5rem 0.8rem"
+  includes-block:
+    backgroundColor: "{colors.steel-light}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.md}"
-    size: "64px"
+    padding: "1.5rem 1.5rem 1.75rem"
+  plan-head:
+    backgroundColor: "{colors.navy-2}"
+    textColor: "{colors.white}"
+    typography: "{typography.table-head}"
+    padding: "0.9rem 1.25rem 0.8rem"
+  plan-head-fleet:
+    backgroundColor: "{colors.electric-deep}"
+    textColor: "{colors.white}"
+  plan-cell-fleet:
+    backgroundColor: "{colors.fleet-wash}"
+    textColor: "{colors.ink}"
   callout:
-    backgroundColor: "{colors.notice-wash}"
+    backgroundColor: "{colors.steel-light}"
     textColor: "{colors.ink}"
+    rounded: "{rounded.sm}"
     padding: "1rem 1.5rem"
+  faq-item:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.sm}"
+    padding: "0.9rem 3.5rem 0.9rem 1.1rem"
+  footer:
+    backgroundColor: "{colors.navy}"
+    textColor: "{colors.on-navy-foot}"
+    padding: "2.5rem 1.5rem 3rem"
 ---
 
-# Design System: CNC Backup (GPV Solutions)
+# Design System: CNC Backup by GPV Solutions
 
 ## Overview
 
-**Creative North Star: "The Posted Sign"**
+**Creative North Star: "The Machined Console"**
 
-The site is the sign a machinist already trusts: a safety-yellow field, ink-black header bands, white message panels, and a concrete ground. Every surface is a piece of posted signage, either a banner (black band, yellow signal word), a panel (white, 3px black edge), or a tag (the hanging hero card). It is loud on purpose, legible at arm's length on a shop-floor phone, and it carries one cool voice, NOTICE blue, reserved for Fleet and for informational notices.
+The site reads as the control surface of modern manufacturing software, with no machine photography. A deep navy field carries the hero, top bar and footer. Content lives on brushed-steel and white panels that sit on a pale blue-grey ground, capped by blue gradient header bands. Electric blue is the one voice: a single emphasized headline word, the wordmark's "Solutions", hover, and every focus ring.
 
-Density is moderate and blocky. Content sits in a single 1120px column of stacked signs, each with a banner and a body. Hierarchy comes from contrast between condensed caps signal words and plain Barlow messages, not from decoration. The hazard stripe is the seam where the page changes register (above the hero, above the footer).
-
-The system rejects the SaaS default: dark-navy hero, blue button, grid of rounded feature cards.
+Density is moderate and plain. Everything sits in a 1120px column. Each topic is one rounded panel with a blue band on top; the hero pairs a caps headline with a steel How it works card that carries a cloud badge. The direction came from the user's reference mockup ("Industrial blue") and replaced an earlier green safety-signage world entirely.
 
 **Key Characteristics:**
-- Yellow, ink, white, concrete as the base; one blue for a single meaning
-- Condensed uppercase signal words over a humanist sans message
-- 3px ink edges and square-cornered panels; small radii only on controls and tags
-- Hazard stripe as the only ornamental pattern
-- Pictograms boxed in 3px black on yellow
+- Navy (#07162B) bookends the page (top bar, hero, footer); the working body is a cool grey-blue ground (#E9EEF4).
+- Electric blue (#2A9DFF) is rare: one headline word, wordmark accent, focus ring, nav hover on navy.
+- White-to-steel gradients and blue gradient bands give a brushed, machined surface without photography.
+- Barlow 800 uppercase for every heading and label; Barlow 400 to 600 for messages.
+- Diagonal blue facets on the left edge of the hero and page title on wide screens only.
+- Soft navy shadows and 6 to 14px radii; no hard edges and no heavy borders.
 
 ## Colors
 
-A signage palette: saturated yellow field, near-black structure, white message surfaces, a grey-green concrete ground, and one NOTICE blue.
+A navy-and-blue palette with cool steel neutrals. Blue is saturated only where it signals; steel and white carry the reading surfaces.
 
 ### Primary
-- **Safety Yellow** (#FFD100): Hero field, page-title field, plan-table Individual header, pictogram tiles, hazard stripe, and signal text on ink (wordmark, sign banners, button label). Hover state fill for open FAQ rows.
+- **Brand Blue** (#0B5CAD): links, pictogram strokes, check-mark discs, FAQ plus discs, document h2 top rule.
+- **Electric Blue** (#2A9DFF): the emphasized headline word, wordmark accent, focus outlines, hover on dark nav, underline of the hero text link, top of the cloud badge gradient.
+- **Electric Deep** (#0A6FD6): Fleet column head, Fleet check marks, bottom of the cloud badge.
+- **Band Gradient** (#0F6BD0 to #0B4FA3): the header band on every panel, the How it works head, and the document h2 band; the shared "blue band".
+- **Button Gradient** (#1B86F0 to #0A5FC4; hover #3A9BFF to #0B6AD8): primary button only.
 
 ### Secondary
-- **NOTICE Blue** (#0B5CAD): Fleet identity (tag header, Fleet column header), links, and focus rings on light surfaces. Its meaning is "notice / Fleet", nothing else.
-- **Notice Wash** (#E6EFF9): Fleet table column tint and the callout background.
+- **Navy** (#07162B): top bar, hero, footer, page-title field, and the on-hover link color.
+- **Navy 2** (#0B2447): Individual plan column head, Individual check marks, on-navy panels.
+- **Navy Glow** (#16335F): radial highlight inside hero and page-title fields.
+- **Facet Blues** (#0B63D6, #0A4AA6, #0B2F73): the three diagonal facet bands at the left edge of the hero.
 
 ### Neutral
-- **Ink** (#111111): Text, top bar, banners, 3px edges, primary button fill.
-- **White** (#FFFFFF): Message panels, tag body, document body, nav text on ink.
-- **Concrete** (#E2E2DC): Page ground, tag footer, inline code chips.
-- **Muted Graphite** (#4A4A44): Secondary descriptions and "no" table cells.
-- **Foot Text** (#D8D8D2): Body copy on the ink footer.
+- **Ground** (#E9EEF4): page background.
+- **Steel** (#DCE3EC) and **Steel Light** (#F1F4F8): card bottom, includes block, callout, inline code, hover and open FAQ rows.
+- **Steel Foot** (#E4EAF2 to #D2DAE6): How it works footer band.
+- **Fleet Wash** (#EAF3FD): Fleet column cells.
+- **Edge** (#C3CFDF): all 1px borders and dividers.
+- **Ink** (#0B1220): body text. **Muted** (#4A566B): secondary descriptions, "no" marks.
+- **White** (#FFFFFF): panels, text on navy and blue.
+- **On-navy tints** (#E3EAF4 hero lede, #C9D6EA page subtitle, #C2CCDB footer text).
 
 ### Named Rules
-**The One Notice Rule.** Blue means Fleet or informational notice. Do not use it as a general accent or decoration; yellow carries emphasis.
-**The Ink-On-Yellow Rule.** Text on yellow is ink, text on ink is yellow or white, text on blue is white. Yellow is never a text color on white or concrete.
+**The One Voice Rule.** Electric blue appears on one headline word per page plus focus and hover. If a second thing wants electric blue, it takes brand blue or white instead.
+**The Fleet Is Electric-Deep Rule.** Fleet in the plan table is identified by electric deep (#0A6FD6) and its wash; Individual stays navy 2. Do not recolor the columns.
+**The Blue Band Rule.** A new content topic is a white panel under the blue band gradient; it does not get a new header color.
 
 ## Typography
 
-**Display Font:** Barlow Condensed (with Arial Narrow, sans-serif), self-hosted weights 600, 700, 800
-**Body Font:** Barlow (with system-ui stack), self-hosted weights 400, 500, 600
+**Display Font:** Barlow (self-hosted 400, 500, 600, 700, 800; fallback system-ui, -apple-system, Segoe UI, sans-serif)
+**Body Font:** Barlow, same stack
+**Label/Mono Font:** Barlow for labels; inline `code` uses ui-monospace, SF Mono, Menlo.
 
-**Character:** Condensed uppercase signal words, widely tracked, over a plain, readable message face. It reads as stencil-adjacent signage without a novelty face.
+**Character:** One family, two voices. Barlow 800 in capitals is the machined, signal voice; Barlow at 400 to 600 in sentence case is the plain message voice.
 
 ### Hierarchy
-- **Display** (800, clamp(3.5rem, 9vw, 6rem), 0.9, -0.01em, caps): Hero h1; page-title h1 uses clamp(3rem, 8vw, 5rem).
-- **Headline** (800, 2rem, 1.05, 0.1em, caps): Sign banners and plan-table column heads (1.5rem on small screens); tag header at 2.25rem with 0.14em.
-- **Title** (800, 1.5rem, 1, 0.06em, caps): Button label, "includes" heading (0.08em), step titles at 1.35rem, document h2 at 1.9rem.
-- **Body** (400, 1.0625rem, 1.6): Messages; lede at 1.25rem/1.5, max 34rem; document text capped at 44rem.
-- **Label** (700, 1.05-1.25rem, 0.06-0.08em, caps): Nav links, text link, hours terms, mobile table cell labels (0.95rem, graphite).
+- **Display** (800, clamp(2.75rem, 6.4vw, 4.75rem), 1): hero h1, uppercase, balanced wrap, letter-spacing -0.005em.
+- **Page Title** (800, clamp(2.5rem, 6vw, 4rem), 1): h1 on support and privacy, uppercase.
+- **Card Head** (800, 2.1rem, 1, 0.01em): the single header on the How it works card.
+- **Band** (800, 1.45rem, 1.1, 0.02em): panel header bands (1.2rem on mobile). Document h2 is 1.5rem (1.3rem mobile).
+- **Table Head** (800, 1.35rem, 1, 0.03em): plan column heads (1.1rem on mobile).
+- **Wordmark** (800, 1.5rem, 1, 0.01em): top bar (1.15rem on mobile).
+- **Title** (800, 1.15rem, 1.1): step titles; **includes h3** and hours terms 1.1rem and 1rem, same style.
+- **Button** (800, 1.1rem, 1, 0.03em): primary button; the text link is 700 at 1.05rem.
+- **Label** (700, 0.95rem, 0.04em, uppercase): nav, card footer; 0.85rem on mobile nav and table cell labels.
+- **Lede** (400, 1.2rem, 1.55): hero paragraph, 34rem measure (1.1rem mobile).
+- **Body** (400, 1.0625rem, 1.6): all prose; documents capped at 44rem.
+- **Small** (400, 0.95rem, 1.4): step descriptions, includes descriptions, footer, table notes.
 
 ### Named Rules
-**The Signal Word Rule.** Barlow Condensed is only for short signal words (headings, nav, buttons, labels), always uppercase. Sentences are always Barlow.
-**The Message Weight Rule.** Weight 600 in Barlow marks the key term in a row (plan row labels, list item leads); secondary lines are 400 in graphite.
+**The Caps Are Headings Rule.** Uppercase Barlow 800 is for headings, labels and buttons; messages are sentence case at 400 to 600.
+**The Ramp Rule.** Reuse a size above before adding a new one.
 
 ## Layout
 
-One centered column, max-width 1120px, side padding 1.5rem (1rem under 640px). Pages stack: top bar, hazard stripe, yellow field (hero or page title), then a series of signs (white panels) separated by 4rem (2.5rem on mobile). The hero is a 1.1fr / 0.9fr two-column grid with a 3.5rem gap that collapses to one column at 860px, with the tag capped at 30rem. The "includes" list is two columns, one under 640px. Document pages put text in a white panel with the prose measure capped at 44rem.
+A single 1120px container (1.5rem side padding, 1rem on mobile) holds everything. The hero is a two-column grid (1.1fr headline, 0.9fr card) with a 3.5rem gap, collapsing to one column at 860px with the card capped at 32rem. Panels stack with 3rem between (2rem mobile). Page body top padding is 4rem (2.5rem mobile). Document pages use a title band in navy and a white document panel with a 44rem reading measure.
 
-Spacing is rem-based and loose, with common steps of 0.75, 1, 1.5, 2.5, 4rem. Touch targets are generous: button min-height 56px, nav links padded to roughly 44px+ tall. The plan table reflows under 640px into stacked rows with a two-column Individual/Fleet pair, each cell labelled via data attributes.
+The plan table uses fixed layout; at 640px it becomes stacked rows with each cell labeled from its data-label. Includes lists go from two columns to one at 640px. Spacing rhythm runs on rem steps (0.25, 0.75, 1, 1.5, 2.5, 4) with 56px as the minimum touch height for the primary button.
+
+The diagonal facets are a wide-screen device: their width is clamp(0px, (100vw - 1120px) / 2 + 16px, 150px), so they vanish when the container fills the viewport.
 
 ## Elevation & Depth
 
-Mostly flat: depth is carried by 3px ink edges and color blocking. Soft shadows appear in exactly two places, objects that are physically picked up or hung: the primary button and the hanging tag.
+Hybrid: soft navy shadows for lift, gradients for material. Panels barely lift; the How it works card and the button lift most.
 
 ### Shadow Vocabulary
-- **Button rest** (`box-shadow: 0 6px 14px rgba(17,17,17,0.28)`): primary button; lifts to `0 10px 20px rgba(17,17,17,0.3)` on hover, drops to `0 2px 6px` on press.
-- **Tag hang** (`box-shadow: 0 18px 32px rgba(17,17,17,0.25)`): hero tag only.
+- **Panel** (`box-shadow: 0 8px 24px rgba(7, 22, 43, 0.08)`): white panels and document body.
+- **Card** (`box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.6)`): the How it works card on navy.
+- **Button** (`0 6px 16px rgba(10, 95, 196, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25)`; hover `0 10px 22px rgba(10, 95, 196, 0.45)` with translateY(-2px); active `0 2px 6px rgba(10, 95, 196, 0.4)` with translateY(1px)).
+- **Badge** (`0 0 0 4px #FFFFFF, 0 6px 14px rgba(0, 0, 0, 0.35)`): cloud badge ring.
 
 ### Named Rules
-**The Flat Sign Rule.** Panels, banners, tables, and callouts get a border, never a shadow. Only the button and the tag may cast one.
+**The Soft Navy Rule.** Shadows are diffuse and navy-tinted on light grounds, black on navy. No hard-offset shadows.
 
 ## Shapes
 
-Square and blocky. Panels, banners, details rows, and callouts have 0 radius with a 3px ink edge (2px for FAQ rows and table rules, 6px for heavy document section dividers). Controls get a 3px radius, pictograms and check marks 3-6px, the hanging tag 14px (10px inner header and footer), with a circular grommet hole. The hazard stripe is a -45deg 16px ink/yellow repeating gradient, 16px tall. The recurring silhouette is a bordered rectangle with a black banner on top; banners carry two small round rivets at the ends.
+Machined but not sharp. Radius steps: 3px (inline code), 6px (button), 8px (callout, FAQ), 12px (panels and document body), 14px (How it works card, with its head and foot following at 14px on the outer corners), 50% (badge, check discs, FAQ discs). Borders are 1px edge (#C3CFDF); the one thick rule is the 3px brand-blue line above document h2s. Panel headers clip inside the panel radius via overflow hidden. The hero facets are a clip-path parallelogram.
 
 ## Components
 
 ### Buttons
-- **Shape:** Slightly squared (3px radius), 56px minimum height.
-- **Primary:** Ink fill, yellow Barlow Condensed 800 1.5rem caps label with a square-capped 3px-stroke arrow icon; padding 0.9rem 1.5rem 0.9rem 1.75rem.
-- **Hover / Focus:** Label turns white, lifts 2px with a larger shadow (160ms, cubic-bezier(0.16, 1, 0.3, 1)); press sinks 1px. Focus ring is 3px, offset 3px, blue on light surfaces, ink on the yellow hero, yellow on ink bands. Full-width on mobile. Motion is disabled under reduced-motion.
-- **Text link:** Condensed caps 700 1.25rem, ink, 3px underline that turns white on hover over yellow.
+- **Shape:** 6px radius, 56px minimum height.
+- **Primary:** vertical blue gradient (#1B86F0 to #0A5FC4), white 800 caps label, down-arrow icon with 3px round stroke; full width on mobile.
+- **Hover / Focus:** lighter gradient, lift 2px; active presses 1px; focus is a 3px electric outline offset 3px. Reduced motion removes transforms.
+- **Text link:** white caps 700 with a 3px electric underline; hover turns electric.
 
-### Sign (panel with banner)
-White panel, 3px ink edge, ink banner with a yellow condensed caps heading and rivets; body padding 1.5rem. The default container for every content block.
-
-### Hanging Tag (signature)
-White, 3px ink edge, 14px radius, hung from a yellow grommet by a black strap, with a NOTICE-blue header band, three pictogram steps separated by 2px ink rules, and a concrete footer with an inset 3px top rule. On load it swings and settles (1100ms) and does not repeat.
-
-### Pictogram
-64px square, yellow, 3px ink border, 6px radius, 40px ink line SVG (2.2 stroke, round caps).
-
-### Plan Table
-Fixed layout; Individual header in yellow, Fleet header in blue/white; Fleet cells tinted notice-wash; 2px ink row rules. Yes/no states are inline SVG marks (filled ink square with yellow check; outlined graphite square with dash), recolored blue/white in the Fleet column. Meaning is never carried by color alone.
+### Cards / Containers
+- **How it works card:** white-to-steel gradient, 14px radius, blue band head with a 56px cloud badge overlapping the top, three icon steps (alternate rows white at 55%), steel foot band. Settles in with an 18px 700ms rise on load.
+- **Panel:** white, 1px edge, 12px radius, blue band head, 1.5rem body.
+- **Includes block:** steel-light ground, two-column list with brand-blue circular check marks.
 
 ### Navigation
-Ink top bar; yellow wordmark (800, 1.5rem, 0.06em caps); nav links white condensed caps that turn yellow on hover. Footer repeats nav in yellow, turning white on hover, under a hazard stripe.
+Navy top bar, wordmark white with "Solutions" in electric, nav links white 700 caps that turn electric on hover. Footer nav repeats it on navy.
 
-### FAQ Details
-2px ink border, white; summary in Barlow 600 with a square ink plus/minus tile (yellow glyph); open or hovered summary fills yellow; answer separated by a 2px rule.
+### Plan table
+Navy 2 head for Individual, electric deep for Fleet with a fleet-wash column; 1px edge rules; check and dash marks are 24px rounded-square SVG symbols colored by column.
 
-### Callout
-3px ink edge, notice-wash fill, 1rem 1.5rem padding.
+### FAQ and callout
+Details rows with 8px radius, 1px edge, a brand-blue disc with plus (minus when open) and a steel-light hover/open fill. Callout is steel-light, 8px radius, 1px edge.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** build new content as a sign: ink banner with yellow caps heading over a white panel with a 3px ink edge.
-- **Do** keep text pairings to ink on yellow, yellow or white on ink, white on blue.
-- **Do** reserve NOTICE blue for Fleet and notices, and keep focus rings visible (3px, offset 3px).
-- **Do** use inline SVG pictograms boxed in 3px ink.
-- **Do** keep controls at 56px or taller on touch screens and respect reduced-motion.
+- **Do** put electric blue (#2A9DFF) on one headline word and on focus rings.
+- **Do** build new topics as white 12px panels under the blue band gradient (#0F6BD0 to #0B4FA3).
+- **Do** keep headings in Barlow 800 uppercase and messages in Barlow 400 to 600 sentence case.
+- **Do** keep text on navy white or one of the on-navy tints, and verify contrast on gradients.
+- **Do** keep the facets wide-screen only and honor reduced motion.
 
 ### Don't:
-- **Don't** use a dark-navy hero with a blue button, or a grid of rounded feature cards.
-- **Don't** set sentences or paragraphs in Barlow Condensed or in caps.
-- **Don't** add shadows to panels, banners, or tables.
-- **Don't** use yellow as text on white or concrete.
-- **Don't** repeat the hazard stripe inside content; it marks page seams only.
-
-### Not canonized (build carries as-is)
-The PRODUCT.md navy (#0F172A) and blue (#2563EB) incumbent no longer exists in the build and is superseded. The one-off rivet gradient greys (#8A8A84, #3A3A36) are decoration, not tokens.
+- **Don't** return to the green safety-signage world: Barlow Condensed, green bands, 2px ink edges, or a hanging tag with an eyelet.
+- **Don't** add machine photography or stock imagery.
+- **Don't** use hard-offset shadows or heavy borders; depth is soft and navy.
+- **Don't** introduce a second accent hue beside blue.
+- **Don't** make a new surface a generic light SaaS feature-card grid.

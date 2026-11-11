@@ -1,79 +1,146 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-11-10T00:00:00Z",
-  "title": "Design System: CNC Backup (GPV Solutions)",
+  "title": "Design System: CNC Backup by GPV Solutions",
   "extensions": {
     "colorMeta": {
-      "safety-yellow": {"role": "primary", "displayName": "Safety Yellow", "canonical": "#FFD100", "tonalRamp": ["#4D3F00","#806900","#B39200","#E6BC00","#FFD100","#FFDD47","#FFE98F","#FFF6CC"]},
-      "ink": {"role": "neutral", "displayName": "Ink", "canonical": "#111111", "tonalRamp": ["#111111","#2A2A2A","#444444","#666666","#888888","#AAAAAA","#CCCCCC","#EEEEEE"]},
-      "notice-blue": {"role": "secondary", "displayName": "NOTICE Blue", "canonical": "#0B5CAD", "tonalRamp": ["#052E57","#073F78","#0B5CAD","#2F7CC6","#5C9AD6","#8DB9E4","#BCD6F0","#E6EFF9"]},
-      "notice-wash": {"role": "secondary", "displayName": "Notice Wash", "canonical": "#E6EFF9", "tonalRamp": ["#0B5CAD","#3D7DBA","#6E9DCB","#9ABBDB","#BCD1E9","#D0E0F2","#E6EFF9","#F4F8FC"]},
-      "concrete": {"role": "neutral", "displayName": "Concrete", "canonical": "#E2E2DC", "tonalRamp": ["#3A3A36","#5C5C56","#7E7E78","#A0A09A","#C0C0BA","#E2E2DC","#EDEDE8","#F6F6F3"]},
-      "muted-graphite": {"role": "neutral", "displayName": "Muted Graphite", "canonical": "#4A4A44", "tonalRamp": ["#1C1C1A","#2E2E2B","#4A4A44","#666660","#82827C","#A0A09A","#C4C4BE","#E2E2DC"]}
+      "navy": { "role": "secondary", "displayName": "Deep Navy", "canonical": "#07162B", "tonalRamp": ["#030A15", "#07162B", "#0B2447", "#16335F", "#3C5782", "#6D86AA", "#A5B6CF", "#DCE3EC"] },
+      "navy-2": { "role": "secondary", "displayName": "Navy Two", "canonical": "#0B2447", "tonalRamp": ["#07162B", "#0B2447", "#16335F", "#2C4A79", "#52709E", "#7F98BD", "#B0C0D8", "#E3EAF4"] },
+      "brand-blue": { "role": "primary", "displayName": "Brand Blue", "canonical": "#0B5CAD", "tonalRamp": ["#042142", "#073768", "#0A4A8A", "#0B5CAD", "#4081BF", "#78A6D1", "#B0CBE5", "#E6EFF9"] },
+      "electric": { "role": "primary", "displayName": "Electric Blue", "canonical": "#2A9DFF", "tonalRamp": ["#04284D", "#07407A", "#0A5FB5", "#0A6FD6", "#2A9DFF", "#6BB9FF", "#A8D5FF", "#E3F2FF"] },
+      "electric-deep": { "role": "primary", "displayName": "Electric Deep", "canonical": "#0A6FD6", "tonalRamp": ["#032C57", "#054483", "#0757AB", "#0A6FD6", "#3D8FE0", "#72AEEA", "#A9CEF2", "#E0EEFB"] },
+      "steel": { "role": "neutral", "displayName": "Brushed Steel", "canonical": "#DCE3EC", "tonalRamp": ["#4A566B", "#6C788C", "#8E9AAE", "#AEBACB", "#C3CFDF", "#DCE3EC", "#F1F4F8", "#FFFFFF"] },
+      "ground": { "role": "neutral", "displayName": "Cool Ground", "canonical": "#E9EEF4", "tonalRamp": ["#4A566B", "#707C90", "#98A3B5", "#BAC4D3", "#D2DAE5", "#E9EEF4", "#F1F4F8", "#FAFBFD"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0B1220", "tonalRamp": ["#0B1220", "#202938", "#364050", "#4A566B", "#7A8598", "#A7B0BF", "#D0D6E0", "#F1F4F8"] }
     },
     "typographyMeta": {
-      "display": {"displayName": "Display", "purpose": "Hero and page-title h1, Barlow Condensed 800 caps."},
-      "headline": {"displayName": "Headline", "purpose": "Sign banners and plan column heads."},
-      "title": {"displayName": "Title", "purpose": "Buttons, sub-headings, step titles."},
-      "body": {"displayName": "Body", "purpose": "Barlow messages."},
-      "label": {"displayName": "Label", "purpose": "Nav, text links, table cell labels."}
+      "display": { "displayName": "Display", "purpose": "Hero h1, Barlow 800 uppercase." },
+      "page-title": { "displayName": "Page Title", "purpose": "h1 on support and privacy." },
+      "card-head": { "displayName": "Card Head", "purpose": "The How it works card header." },
+      "band": { "displayName": "Band", "purpose": "Panel header bands and document h2." },
+      "table-head": { "displayName": "Table Head", "purpose": "Plan column heads." },
+      "wordmark": { "displayName": "Wordmark", "purpose": "Top bar brand." },
+      "title": { "displayName": "Title", "purpose": "Step titles, includes h3, hours terms." },
+      "button": { "displayName": "Button", "purpose": "Primary button label." },
+      "label": { "displayName": "Label", "purpose": "Nav, text link, card footer." },
+      "lede": { "displayName": "Lede", "purpose": "Hero paragraph." },
+      "body": { "displayName": "Body", "purpose": "All prose, 44rem measure in documents." },
+      "small": { "displayName": "Small", "purpose": "Descriptions, footer, mobile cells." }
     },
     "shadows": [
-      {"name": "button-rest", "value": "0 6px 14px rgba(17,17,17,0.28)", "purpose": "Primary button at rest; 0 10px 20px on hover."},
-      {"name": "tag-hang", "value": "0 18px 32px rgba(17,17,17,0.25)", "purpose": "Hero hanging tag only."}
+      { "name": "panel", "value": "0 8px 24px rgba(7, 22, 43, 0.08)", "purpose": "White panels and document body." },
+      { "name": "card", "value": "0 24px 48px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.6)", "purpose": "How it works card on navy." },
+      { "name": "button-rest", "value": "0 6px 16px rgba(10, 95, 196, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25)", "purpose": "Primary button at rest." },
+      { "name": "button-hover", "value": "0 10px 22px rgba(10, 95, 196, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3)", "purpose": "Primary button hover, with translateY(-2px)." },
+      { "name": "badge-ring", "value": "0 0 0 4px #FFFFFF, 0 6px 14px rgba(0, 0, 0, 0.35)", "purpose": "Cloud badge." }
     ],
     "motion": [
-      {"name": "ease-settle", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Button lift (160ms) and tag swing-and-settle (1100ms, once). Disabled under prefers-reduced-motion."}
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Button transform and shadow, 160ms; card rise, 700ms." },
+      { "name": "card-rise", "value": "700ms translateY(18px) to 0", "purpose": "One-time entrance of the How it works card; removed under reduced motion." }
     ],
     "breakpoints": [
-      {"name": "tablet", "value": "860px"},
-      {"name": "mobile", "value": "640px"}
+      { "name": "tablet", "value": "860px" },
+      { "name": "mobile", "value": "640px" }
     ]
   },
   "components": [
     {
-      "name": "Primary Button", "kind": "button", "refersTo": "button-primary",
-      "description": "Ink button with yellow condensed caps label; the single call to action.",
-      "html": "<a class=\"ds-btn\" href=\"#\">Choose your plan</a>",
-      "css": ".ds-btn{display:inline-flex;align-items:center;min-height:56px;padding:.9rem 1.5rem .9rem 1.75rem;background:var(--ink,#111);color:var(--yellow,#FFD100);border-radius:3px;font:800 1.5rem/1 'Barlow Condensed','Arial Narrow',sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;box-shadow:0 6px 14px rgba(17,17,17,.28);transition:transform 160ms cubic-bezier(.16,1,.3,1),box-shadow 160ms cubic-bezier(.16,1,.3,1)}.ds-btn:hover{color:#fff;transform:translateY(-2px);box-shadow:0 10px 20px rgba(17,17,17,.3)}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid #0B5CAD;outline-offset:3px}"
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Blue gradient action with a down arrow; lifts on hover.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Choose your plan <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4v15M5 13l7 7 7-7\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.75rem; min-height: 56px; padding: 0.9rem 1.5rem 0.9rem 1.75rem; background: linear-gradient(180deg, #1B86F0 0%, #0A5FC4 100%); color: #fff; border-radius: 6px; font: 800 1.1rem/1 Barlow, system-ui, sans-serif; letter-spacing: 0.03em; text-transform: uppercase; text-decoration: none; box-shadow: 0 6px 16px rgba(10,95,196,0.35), inset 0 1px 0 rgba(255,255,255,0.25); transition: transform 160ms cubic-bezier(0.16,1,0.3,1), box-shadow 160ms cubic-bezier(0.16,1,0.3,1), background 160ms; } .ds-btn svg { width: 1.15rem; height: 1.15rem; stroke: currentColor; fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; } .ds-btn:hover { background: linear-gradient(180deg, #3A9BFF 0%, #0B6AD8 100%); transform: translateY(-2px); box-shadow: 0 10px 22px rgba(10,95,196,0.45), inset 0 1px 0 rgba(255,255,255,0.3); } .ds-btn:active { transform: translateY(1px); box-shadow: 0 2px 6px rgba(10,95,196,0.4); } .ds-btn:focus-visible { outline: 3px solid #2A9DFF; outline-offset: 3px; }"
     },
     {
-      "name": "Sign", "kind": "card", "refersTo": "sign-panel",
-      "description": "White panel with 3px ink edge and an ink banner; the default content container.",
-      "html": "<section class=\"ds-sign\"><h2>Plans</h2><p>Message text.</p></section>",
-      "css": ".ds-sign{background:#fff;border:3px solid #111}.ds-sign h2{margin:0;background:#111;color:#FFD100;padding:.7rem 3rem .55rem;font:800 2rem/1.05 'Barlow Condensed','Arial Narrow',sans-serif;letter-spacing:.1em;text-transform:uppercase}.ds-sign p{margin:0;padding:1.5rem;font:400 1.0625rem/1.6 Barlow,system-ui,sans-serif}"
+      "name": "Text Link",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "Secondary action on navy, caps with an electric underline.",
+      "html": "<div class=\"ds-on-navy\"><a class=\"ds-text-link\" href=\"#\">Compare plans</a></div>",
+      "css": ".ds-on-navy { background: #07162B; padding: 1rem 1.5rem; } .ds-text-link { font: 700 1.05rem/1 Barlow, system-ui, sans-serif; letter-spacing: 0.03em; text-transform: uppercase; color: #fff; text-decoration-color: #2A9DFF; text-decoration-thickness: 3px; text-underline-offset: 0.18em; padding: 1rem 0; } .ds-text-link:hover { color: #2A9DFF; } .ds-text-link:focus-visible { outline: 3px solid #2A9DFF; outline-offset: 3px; }"
     },
     {
-      "name": "Pictogram", "kind": "custom", "refersTo": "pictogram",
-      "description": "Yellow tile boxed in 3px ink holding a line icon.",
-      "html": "<span class=\"ds-pict\"><svg viewBox=\"0 0 24 24\"><path d=\"M5.5 12.5l4.2 4.2L18.5 7.8\"/></svg></span>",
-      "css": ".ds-pict{display:grid;place-items:center;width:64px;height:64px;border:3px solid #111;border-radius:6px;background:#FFD100}.ds-pict svg{width:40px;height:40px;fill:none;stroke:#111;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}"
+      "name": "Panel with Blue Band",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "White 12px panel with a blue gradient header band and soft navy shadow.",
+      "html": "<section class=\"ds-sign\"><h2>What's included</h2><div class=\"ds-sign-body\"><p>One tap copies the machine's files to a verified cloud copy.</p></div></section>",
+      "css": ".ds-sign { background: #fff; border: 1px solid #C3CFDF; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(7,22,43,0.08); font: 400 1.0625rem/1.6 Barlow, system-ui, sans-serif; color: #0B1220; } .ds-sign > h2 { margin: 0; padding: 0.95rem 1.5rem 0.8rem; color: #fff; background: linear-gradient(180deg, #0F6BD0, #0B4FA3); font: 800 1.45rem/1.1 Barlow, system-ui, sans-serif; letter-spacing: 0.02em; text-transform: uppercase; } .ds-sign-body { padding: 1.5rem; } .ds-sign-body p { margin: 0; }"
     },
     {
-      "name": "Callout", "kind": "card", "refersTo": "callout",
-      "description": "Notice-wash note with 3px ink edge.",
-      "html": "<div class=\"ds-callout\"><p>Notice text.</p></div>",
-      "css": ".ds-callout{border:3px solid #111;background:#E6EFF9;padding:1rem 1.5rem;font:400 1.0625rem/1.6 Barlow,system-ui,sans-serif}.ds-callout p{margin:.4rem 0}"
+      "name": "How It Works Card",
+      "kind": "custom",
+      "refersTo": "how-card",
+      "description": "White-to-steel 14px card with blue head, overlapping cloud badge, steps and steel foot.",
+      "html": "<aside class=\"ds-card\"><span class=\"ds-badge\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 17.5A4.5 4.5 0 0 1 6.5 8.6 6 6 0 0 1 18 9.5a4 4 0 0 1-.5 8\"/><path d=\"M12 11v8M9 16l3 3 3-3\"/></svg></span><h2 class=\"ds-card-head\">How it works</h2><ol class=\"ds-steps\"><li><div><strong>Plug in the drive</strong><span>Read straight from the controller's USB stick.</span></div></li><li><div><strong>Tap Start Backup</strong><span>Files are copied, even offline.</span></div></li></ol><p class=\"ds-card-foot\">Verified copy</p></aside>",
+      "css": ".ds-card { position: relative; margin-top: 32px; background: linear-gradient(180deg, #FFFFFF 0%, #DCE3EC 100%); border-radius: 14px; box-shadow: 0 24px 48px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.6); color: #0B1220; font: 400 1.0625rem/1.6 Barlow, system-ui, sans-serif; } .ds-badge { position: absolute; top: -28px; left: 50%; width: 56px; height: 56px; margin-left: -28px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(180deg, #2A9DFF, #0A6FD6); box-shadow: 0 0 0 4px #fff, 0 6px 14px rgba(0,0,0,0.35); } .ds-badge svg { width: 28px; height: 28px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; } .ds-card-head { margin: 0; background: linear-gradient(180deg, #0F6BD0, #0B4FA3); color: #fff; text-align: center; padding: 2.1rem 1rem 0.85rem; border-radius: 14px 14px 0 0; font: 800 2.1rem/1 Barlow, system-ui, sans-serif; text-transform: uppercase; letter-spacing: 0.01em; } .ds-steps { list-style: none; margin: 0; padding: 0; } .ds-steps li { padding: 1rem 1.5rem; } .ds-steps li:nth-child(even) { background: rgba(255,255,255,0.55); } .ds-steps li + li { border-top: 1px solid #C3CFDF; } .ds-steps strong { display: block; font: 800 1.15rem/1.1 Barlow, system-ui, sans-serif; text-transform: uppercase; letter-spacing: 0.01em; color: #07162B; } .ds-steps span { display: block; font-size: 0.95rem; line-height: 1.4; color: #4A566B; margin-top: 0.2rem; } .ds-card-foot { margin: 0; padding: 0.9rem 1.5rem 1.1rem; border-top: 1px solid #C3CFDF; background: linear-gradient(180deg, #E4EAF2, #D2DAE6); border-radius: 0 0 14px 14px; font: 700 0.95rem/1.3 Barlow, system-ui, sans-serif; letter-spacing: 0.03em; text-transform: uppercase; color: #07162B; }"
     },
     {
-      "name": "Nav Link", "kind": "nav", "refersTo": "sign-header",
-      "description": "White condensed caps link on the ink top bar; yellow on hover.",
-      "html": "<nav class=\"ds-nav\"><a href=\"#\">Support</a><a href=\"#\">Privacy</a></nav>",
-      "css": ".ds-nav{display:flex;gap:.25rem;background:#111;padding:.25rem .75rem}.ds-nav a{font:700 1.05rem/1 'Barlow Condensed','Arial Narrow',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-decoration:none;padding:.75rem}.ds-nav a:hover{color:#FFD100}.ds-nav a:focus-visible{outline:3px solid #FFD100;outline-offset:3px}"
+      "name": "Plan Table Header",
+      "kind": "custom",
+      "refersTo": "plan-head",
+      "description": "Navy Individual head beside an electric-deep Fleet head with a wash column.",
+      "html": "<table class=\"ds-plans\"><thead><tr><th>Individual</th><th class=\"fleet\">Fleet</th></tr></thead><tbody><tr><td>Cloud backup</td><td class=\"fleet\">Cloud backup</td></tr></tbody></table>",
+      "css": ".ds-plans { width: 100%; border-collapse: collapse; background: #fff; font: 500 1.0625rem/1.4 Barlow, system-ui, sans-serif; color: #0B1220; } .ds-plans th, .ds-plans td { padding: 1rem 1.25rem; text-align: left; border-top: 1px solid #C3CFDF; } .ds-plans thead th { border-top: 0; padding: 0.9rem 1.25rem 0.8rem; background: #0B2447; color: #fff; font: 800 1.35rem/1 Barlow, system-ui, sans-serif; letter-spacing: 0.03em; text-transform: uppercase; } .ds-plans thead th.fleet { background: #0A6FD6; } .ds-plans td.fleet { background: #EAF3FD; }"
+    },
+    {
+      "name": "FAQ Item",
+      "kind": "custom",
+      "refersTo": "faq-item",
+      "description": "Details row with a brand-blue plus disc; steel-light fill on hover and open.",
+      "html": "<details class=\"ds-faq\" open><summary>Does it work offline?</summary><p>Yes. Files are queued and uploaded when you reconnect.</p></details>",
+      "css": ".ds-faq { border: 1px solid #C3CFDF; border-radius: 8px; background: #fff; overflow: hidden; font: 400 1.0625rem/1.6 Barlow, system-ui, sans-serif; color: #0B1220; } .ds-faq summary { list-style: none; cursor: pointer; position: relative; padding: 0.9rem 3.5rem 0.9rem 1.1rem; font-weight: 600; line-height: 1.35; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq summary::after { content: ''; position: absolute; right: 1rem; top: 50%; width: 1.5rem; height: 1.5rem; margin-top: -0.75rem; border-radius: 50%; background: linear-gradient(#fff,#fff) center / 10px 2px no-repeat, #0B5CAD; } .ds-faq summary:hover, .ds-faq[open] > summary { background: #F1F4F8; } .ds-faq summary:focus-visible { outline: 3px solid #2A9DFF; outline-offset: 3px; } .ds-faq > p { margin: 0; padding: 1rem 1.1rem 1.2rem; border-top: 1px solid #C3CFDF; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "topbar",
+      "description": "Navy top bar with white caps wordmark, electric accent word and caps links.",
+      "html": "<div class=\"ds-topbar\"><a class=\"ds-wordmark\" href=\"#\">GPV <span>Solutions</span></a><nav><a href=\"#\">Support</a><a href=\"#\">Privacy</a></nav></div>",
+      "css": ".ds-topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.9rem 1.5rem; background: #07162B; } .ds-topbar nav { display: flex; gap: 0.25rem; } .ds-wordmark { font: 800 1.5rem/1 Barlow, system-ui, sans-serif; letter-spacing: 0.01em; text-transform: uppercase; color: #fff; text-decoration: none; } .ds-wordmark span { color: #2A9DFF; } .ds-topbar nav a { font: 700 0.95rem/1 Barlow, system-ui, sans-serif; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; text-decoration: none; padding: 0.75rem; } .ds-topbar nav a:hover { color: #2A9DFF; } .ds-topbar a:focus-visible { outline: 3px solid #2A9DFF; outline-offset: 3px; }"
+    },
+    {
+      "name": "Callout",
+      "kind": "custom",
+      "refersTo": "callout",
+      "description": "Steel-light 8px box with a 1px edge for document notices.",
+      "html": "<div class=\"ds-callout\"><p>Notice text goes here.</p></div>",
+      "css": ".ds-callout { border: 1px solid #C3CFDF; border-radius: 8px; background: #F1F4F8; padding: 1rem 1.5rem; font: 400 1.0625rem/1.6 Barlow, system-ui, sans-serif; color: #0B1220; } .ds-callout p { margin: 0.4rem 0; }"
     }
   ],
   "narrative": {
-    "northStar": "The Posted Sign",
-    "overview": "The site is the sign a machinist already trusts: a safety-yellow field, ink-black header bands, white message panels, and a concrete ground, with one NOTICE blue reserved for Fleet and notices. Condensed uppercase signal words sit over a plain Barlow message face; the hazard stripe marks page seams.",
-    "keyCharacteristics": ["Yellow, ink, white, concrete base; one blue for a single meaning", "Condensed uppercase signal words over humanist sans messages", "3px ink edges and square panels; small radii only on controls and tags", "Hazard stripe as the only ornamental pattern", "Pictograms boxed in 3px black on yellow"],
-    "rules": [
-      {"name": "The One Notice Rule", "body": "Blue means Fleet or informational notice. Do not use it as a general accent or decoration; yellow carries emphasis.", "section": "colors"},
-      {"name": "The Ink-On-Yellow Rule", "body": "Text on yellow is ink, text on ink is yellow or white, text on blue is white. Yellow is never a text color on white or concrete.", "section": "colors"},
-      {"name": "The Signal Word Rule", "body": "Barlow Condensed is only for short signal words, always uppercase. Sentences are always Barlow.", "section": "typography"},
-      {"name": "The Message Weight Rule", "body": "Weight 600 in Barlow marks the key term in a row; secondary lines are 400 in graphite.", "section": "typography"},
-      {"name": "The Flat Sign Rule", "body": "Panels, banners, tables, and callouts get a border, never a shadow. Only the button and the tag may cast one.", "section": "elevation"}
+    "northStar": "The Machined Console",
+    "overview": "The site reads as the control surface of modern manufacturing software, with no machine photography. A deep navy field carries the hero, top bar and footer. Content lives on brushed-steel and white panels that sit on a pale blue-grey ground, capped by blue gradient header bands. Electric blue is the one voice: a single emphasized headline word, the wordmark's \"Solutions\", hover, and every focus ring.\n\nDensity is moderate and plain. Everything sits in a 1120px column. Each topic is one rounded panel with a blue band on top; the hero pairs a caps headline with a steel How it works card that carries a cloud badge. The direction came from the user's reference mockup (\"Industrial blue\") and replaced an earlier green safety-signage world entirely.",
+    "keyCharacteristics": [
+      "Navy (#07162B) bookends the page (top bar, hero, footer); the working body is a cool grey-blue ground (#E9EEF4).",
+      "Electric blue (#2A9DFF) is rare: one headline word, wordmark accent, focus ring, nav hover on navy.",
+      "White-to-steel gradients and blue gradient bands give a brushed, machined surface without photography.",
+      "Barlow 800 uppercase for every heading and label; Barlow 400 to 600 for messages.",
+      "Diagonal blue facets on the left edge of the hero and page title on wide screens only.",
+      "Soft navy shadows and 6 to 14px radii; no hard edges and no heavy borders."
     ],
-    "dos": ["Do build new content as a sign: ink banner with yellow caps heading over a white panel with a 3px ink edge.", "Do keep text pairings to ink on yellow, yellow or white on ink, white on blue.", "Do reserve NOTICE blue for Fleet and notices, and keep focus rings visible (3px, offset 3px).", "Do use inline SVG pictograms boxed in 3px ink.", "Do keep controls at 56px or taller on touch screens and respect reduced-motion."],
-    "donts": ["Don't use a dark-navy hero with a blue button, or a grid of rounded feature cards.", "Don't set sentences or paragraphs in Barlow Condensed or in caps.", "Don't add shadows to panels, banners, or tables.", "Don't use yellow as text on white or concrete.", "Don't repeat the hazard stripe inside content; it marks page seams only."]
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Electric blue appears on one headline word per page plus focus and hover. If a second thing wants electric blue, it takes brand blue or white instead.", "section": "colors" },
+      { "name": "The Fleet Is Electric-Deep Rule", "body": "Fleet in the plan table is identified by electric deep (#0A6FD6) and its wash; Individual stays navy 2. Do not recolor the columns.", "section": "colors" },
+      { "name": "The Blue Band Rule", "body": "A new content topic is a white panel under the blue band gradient; it does not get a new header color.", "section": "colors" },
+      { "name": "The Caps Are Headings Rule", "body": "Uppercase Barlow 800 is for headings, labels and buttons; messages are sentence case at 400 to 600.", "section": "typography" },
+      { "name": "The Ramp Rule", "body": "Reuse a size above before adding a new one.", "section": "typography" },
+      { "name": "The Soft Navy Rule", "body": "Shadows are diffuse and navy-tinted on light grounds, black on navy. No hard-offset shadows.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do put electric blue (#2A9DFF) on one headline word and on focus rings.",
+      "Do build new topics as white 12px panels under the blue band gradient (#0F6BD0 to #0B4FA3).",
+      "Do keep headings in Barlow 800 uppercase and messages in Barlow 400 to 600 sentence case.",
+      "Do keep text on navy white or one of the on-navy tints, and verify contrast on gradients.",
+      "Do keep the facets wide-screen only and honor reduced motion."
+    ],
+    "donts": [
+      "Don't return to the green safety-signage world: Barlow Condensed, green bands, 2px ink edges, or a hanging tag with an eyelet.",
+      "Don't add machine photography or stock imagery.",
+      "Don't use hard-offset shadows or heavy borders; depth is soft and navy.",
+      "Don't introduce a second accent hue beside blue.",
+      "Don't make a new surface a generic light SaaS feature-card grid."
+    ]
   }
 }
