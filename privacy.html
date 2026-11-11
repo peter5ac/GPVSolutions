@@ -3,79 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        h1 { border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
-        h2 { margin-top: 1.5rem; }
-        footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #eee; font-size: 0.9rem; color: #666; }
-        a { color: #0366d6; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
+    <title>Privacy Policy | CNC Backup</title>
+    <link rel="preload" href="fonts/Barlow-800.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
+    <div class="topbar">
+        <div class="topbar-inner">
+            <a class="wordmark" href="index.html">GPV <span>Solutions</span></a>
+            <nav aria-label="Site">
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+        </div>
+    </div>
+    <header class="page-title">
+        <div class="page-title-inner">
+            <h1>Privacy Policy</h1>
+            <p>Last updated: November 10, 2026</p>
+        </div>
+    </header>
+    <main class="doc">
+        <div class="doc-body">
+        <p>This policy covers the CNC Backup website and the CNC Backup app for iPad and iPhone, both provided by GPV Solutions LLC. It explains what we collect, why, and who else handles it.</p>
 
-    <h1>Privacy Policy</h1>
-    <p><em>Last updated: November 10, 2026</em></p>
+        <h2>1. Your machine files stay out of our hands</h2>
+        <p>CNC Backup reads files from a USB drive you connect, copies them to protected storage on your device, and uploads them to the cloud account you connect: SharePoint, Google Drive or Dropbox. <strong>We never receive your program, parameter or backup files.</strong> The app never changes anything on your USB drive. The sign-in tokens for your cloud accounts are kept in the iOS Keychain on your device and are not sent to us.</p>
 
-    <p>This policy covers the CNC Backup website and the CNC Backup app for iPad and iPhone, both provided by GPV Solutions LLC. It explains what we collect, why, and who else handles it.</p>
-
-    <h2>1. Your machine files stay out of our hands</h2>
-    <p>CNC Backup reads files from a USB drive you connect, copies them to protected storage on your device, and uploads them to the cloud account you connect: SharePoint, Google Drive or Dropbox. <strong>We never receive your program, parameter or backup files.</strong> The app never changes anything on your USB drive. The sign-in tokens for your cloud accounts are kept in the iOS Keychain on your device and are not sent to us.</p>
-
-    <h2>2. What we collect</h2>
-    <ul>
+        <h2>2. What we collect</h2>
+        <ul>
         <li><strong>Questions you send us.</strong> If you use the Ask a question form, your name, email address and message. We use them only to reply.</li>
         <li><strong>Purchases.</strong> Stripe takes your payment. We receive your email address, your Stripe customer and subscription identifiers, and the plan you chose. We never see your card number.</li>
         <li><strong>License activation.</strong> When you enter a license key, the app sends the key and a device identifier to our license server to register the device and issue a signed license. The identifier is specific to our app on that device.</li>
         <li><strong>Microsoft single sign-on (Fleet).</strong> When someone signs in with a work Microsoft account, we receive a signed identity token from Microsoft and keep the work email address and the organization&rsquo;s Microsoft tenant identifier. Personal Microsoft accounts are not accepted.</li>
         <li><strong>Managed Fleet backup log.</strong> If your organization is managed, each device reports one entry per backup to your organization&rsquo;s administrators: who ran it, the device, the drive name, the machine detected, how many files and how many bytes, when it was copied and uploaded, the upload status and cloud provider, and a link to the backup folder. It does not include file names or file contents.</li>
         <li><strong>Website visits.</strong> Our hosting providers see technical information that every web request carries, such as your IP address, browser type and the page requested. We don&rsquo;t run advertising or analytics scripts on this site.</li>
-    </ul>
+        </ul>
 
-    <h2>3. How we use it</h2>
-    <p>To provide and renew licenses, to verify and operate Fleet single sign-on and administrator policy and logs, to send license and verification emails, to answer your questions, and to protect the site and license server from abuse. We don&rsquo;t sell your information and we don&rsquo;t use it for advertising.</p>
+        <h2>3. How we use it</h2>
+        <p>To provide and renew licenses, to verify and operate Fleet single sign-on and administrator policy and logs, to send license and verification emails, to answer your questions, and to protect the site and license server from abuse. We don&rsquo;t sell your information and we don&rsquo;t use it for advertising.</p>
 
-    <h2>4. Who else handles it</h2>
-    <ul>
+        <h2>4. Who else handles it</h2>
+        <ul>
         <li><strong>Stripe</strong> for payments and its embedded pricing table.</li>
         <li><strong>Cloudflare</strong> to run our license server, and Turnstile to check that contact-form messages come from people.</li>
         <li><strong>Resend</strong> to send license and verification emails and to deliver your questions to us.</li>
         <li><strong>Microsoft</strong> for single sign-on.</li>
         <li><strong>GitHub Pages</strong> to host this website.</li>
         <li><strong>Your cloud provider</strong> (Microsoft, Google or Dropbox) receives your backups under your own agreement with them.</li>
-    </ul>
-    <p>Stripe and Cloudflare Turnstile may set cookies or similar technologies in your browser when their parts of the site load. You can block them in your browser settings, though the pricing table and contact form may stop working.</p>
+        </ul>
+        <p>Stripe and Cloudflare Turnstile may set cookies or similar technologies in your browser when their parts of the site load. You can block them in your browser settings, though the pricing table and contact form may stop working.</p>
 
-    <h2>5. How long we keep it</h2>
-    <p>We keep license and account records while your subscription is active and for as long as we need them for billing and support. A Fleet organization&rsquo;s backup log is kept while its account exists and is removed with it. Staged backup copies on your device are deleted according to the auto-delete setting in the app, and you can delete them at any time.</p>
+        <h2>5. How long we keep it</h2>
+        <p>We keep license and account records while your subscription is active and for as long as we need them for billing and support. A Fleet organization&rsquo;s backup log is kept while its account exists and is removed with it. Staged backup copies on your device are deleted according to the auto-delete setting in the app, and you can delete them at any time.</p>
 
-    <h2>6. Security</h2>
-    <p>Data sent to us and to your cloud provider travels over encrypted connections. Backup files staged on your device use iOS Complete file protection, and license and account tokens are kept in the Keychain. No method of storage or transmission is completely secure.</p>
+        <h2>6. Security</h2>
+        <p>Data sent to us and to your cloud provider travels over encrypted connections. Backup files staged on your device use iOS Complete file protection, and license and account tokens are kept in the Keychain. No method of storage or transmission is completely secure.</p>
 
-    <h2>7. Your choices</h2>
-    <p>Depending on where you live, you may have the right to access, correct or delete the personal information we hold about you. Use the <strong>Ask a question</strong> button at the bottom right of this page to make a request. Fleet members can also ask their organization&rsquo;s administrator about the backup log, since the administrator controls it.</p>
+        <h2>7. Your choices</h2>
+        <p>Depending on where you live, you may have the right to access, correct or delete the personal information we hold about you. Use the <strong>Ask a question</strong> button at the bottom right of this page to make a request. Fleet members can also ask their organization&rsquo;s administrator about the backup log, since the administrator controls it.</p>
 
-    <h2>8. Children</h2>
-    <p>CNC Backup is a business tool and is not directed to children.</p>
+        <h2>8. Children</h2>
+        <p>CNC Backup is a business tool and is not directed to children.</p>
 
-    <h2>9. Changes to this policy</h2>
-    <p>If we change this policy we&rsquo;ll post the new version here with an updated date.</p>
+        <h2>9. Changes to this policy</h2>
+        <p>If we change this policy we&rsquo;ll post the new version here with an updated date.</p>
 
-    <h2>10. Contact us</h2>
-    <p>Questions about this policy? Use the <strong>Ask a question</strong> button at the bottom right of this page.</p>
+        <h2>10. Contact us</h2>
+        <p>Questions about this policy? Use the <strong>Ask a question</strong> button at the bottom right of this page.</p>
 
-    <footer>
-        <p><a href="index.html">&larr; Back to Home</a> &middot; <a href="support.html">Support</a></p>
+    
+        </div>
+    </main>
+    <footer class="site-foot">
+        <div class="site-foot-inner">
+            <nav aria-label="Footer"><a href="index.html">Home</a><a href="support.html">Support</a></nav>
+            <p>&copy; 2026 GPV Solutions. All rights reserved.</p>
+            <p>GPV Solutions LLC | Industrial Software Systems</p>
+        </div>
     </footer>
-
     <script src="contact.js" defer></script>
 </body>
 </html>

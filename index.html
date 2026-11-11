@@ -4,328 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CNC Backup | GPV Solutions</title>
-    <style>
-        :root {
-            --primary: #0F172A;
-            --accent: #2563EB;
-            --bg-light: #F8FAFC;
-            --text-dark: #334155;
-            --border: #E2E8F0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-dark);
-            background-color: #FFFFFF;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--primary);
-            color: #FFFFFF;
-            padding: 3rem 1.5rem;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: clamp(1.8rem, 5vw, 2.4rem);
-            letter-spacing: -0.02em;
-            line-height: 1.15;
-        }
-
-        header p {
-            margin: 0.75rem auto 0;
-            max-width: 40ch;
-            color: #CBD5E1;
-            font-size: 1.1rem;
-            text-wrap: balance;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem 1rem;
-        }
-
-        .hero-section {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .hero-section p {
-            max-width: 60ch;
-            font-size: 1.15rem;
-            margin: 0 auto;
-            text-wrap: pretty;
-        }
-
-        .policy-section {
-            margin-top: 4rem;
-            padding-top: 2.5rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .compare-section {
-            margin-bottom: 3rem;
-        }
-
-        .compare-section h2,
-        .pricing-section h2,
-        .policy-section h2 {
-            margin: 0 0 1.5rem;
-            font-size: 1.4rem;
-            line-height: 1.2;
-            color: var(--primary);
-        }
-
-        .plans-table {
-            width: 100%;
-            margin: 0 0 1.5rem;
-            border-collapse: collapse;
-            table-layout: fixed;
-        }
-
-        .plans-table th,
-        .plans-table td {
-            padding: 1rem 0.75rem;
-            border-bottom: 1px solid var(--border);
-            text-align: left;
-            vertical-align: top;
-        }
-
-        .plans-table thead th {
-            border-bottom: 2px solid var(--primary);
-            font-size: 1.1rem;
-            color: var(--primary);
-        }
-
-        .plans-table thead th.fleet {
-            border-bottom-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .plans-table tbody th {
-            width: 32%;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .plans-table td.fleet {
-            background-color: #EFF6FF;
-        }
-
-        .plans-table .no {
-            color: #64748B;
-        }
-
-        .plans-table .yes {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .plans-table svg {
-            flex: none;
-            width: 1em;
-            height: 1em;
-            stroke: var(--accent);
-        }
-
-        .plans-table small {
-            display: block;
-            margin-top: 0.15rem;
-            font-size: 0.85rem;
-            font-weight: 400;
-            color: #64748B;
-        }
-
-        .compare-section > p,
-        .policy-section > p {
-            max-width: 70ch;
-            margin: 0;
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-            clip-path: inset(50%);
-        }
-
-        a {
-            color: var(--accent);
-        }
-
-        a:focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-            border-radius: 2px;
-        }
-
-        .contact-box {
-            background-color: #EFF6FF;
-            border: 1px solid #BFDBFE;
-            border-radius: 8px;
-            padding: 1.25rem 1.5rem;
-        }
-
-        .contact-box p {
-            margin: 0 0 0.5rem;
-        }
-
-        .contact-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        footer {
-            background-color: var(--bg-light);
-            border-top: 1px solid var(--border);
-            padding: 2rem 1rem;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #64748B;
-            margin-top: 4rem;
-        }
-
-        footer a {
-            display: inline-block;
-            padding: 0.5rem 0.25rem;
-        }
-
-        stripe-pricing-table {
-            display: block;
-            min-height: 12rem;
-        }
-
-        @media (max-width: 600px) {
-            header {
-                padding: 2rem 1rem;
-            }
-
-            .container {
-                padding: 2rem 1rem 0.5rem;
-            }
-
-            .hero-section {
-                margin-bottom: 1.5rem;
-            }
-
-            .policy-section {
-                margin-top: 3rem;
-                padding-top: 2rem;
-            }
-
-            .compare-section h2,
-            .pricing-section h2,
-            .policy-section h2 {
-                font-size: 1.25rem;
-                margin-bottom: 1.25rem;
-            }
-
-            .plans-table thead td {
-                display: none;
-            }
-
-            .plans-table,
-            .plans-table thead,
-            .plans-table tbody {
-                display: block;
-            }
-
-            .plans-table tr {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .plans-table thead th {
-                border-bottom-width: 2px;
-            }
-
-            .plans-table tbody th,
-            .plans-table td {
-                border-bottom: 0;
-                padding: 0.75rem;
-                font-size: 0.9rem;
-            }
-
-            .plans-table tbody th {
-                grid-column: 1 / -1;
-                width: auto;
-                padding: 1rem 0.75rem 0.25rem;
-            }
-
-            .contact-box {
-                padding: 1rem;
-                overflow-wrap: anywhere;
-            }
-
-            footer {
-                margin-top: 3rem;
-            }
-        }
-    </style>
+    <meta name="description" content="CNC Backup is a subscription app for iPad and iPhone that backs up your CNC machines' controller files to SharePoint, Google Drive, or Dropbox, even when the shop floor is offline.">
+    <link rel="preload" href="fonts/Barlow-800.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
+<!--
+THESIS: Industrial blue. Software for modern CNC manufacturing: deep navy field, electric-blue emphasis, white and brushed-steel panels, no machine photography. It refuses the safety-signage costume and the generic light SaaS page.
+OWN-WORLD: Navy #07162B with diagonal blue facets at the left edge, electric blue #2A9DFF for one word and for focus, white-to-steel gradient cards, blue gradient header bands, Barlow 800 caps for headings and Barlow for messages.
+STORY: The visitor learns that one tap copies a machine's files to a verified cloud copy even offline, sees Individual vs Fleet in one table, and picks a plan from the picker, which leads the page body.
+FIRST VIEWPORT: Navy hero. Left: five-rem caps headline with MACHINE in electric blue, lede, blue Choose-your-plan button, Compare plans link. Right: a steel-white How it works card with a cloud badge, three icon steps and a footer band.
+FORM: Industrial-blue direction from the user's reference mockup. User-pinned, so no concept roll was run by design.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
 
-    <header>
-        <h1>GPV Solutions</h1>
-        <p>CNC Backup: Machine Recovery Solution for Modern Manufacturing</p>
-    </header>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="yes" viewBox="0 0 24 24"><rect width="24" height="24" rx="3" style="fill:var(--mk-bg)"/><path d="M5.5 12.5l4.2 4.2L18.5 7.8" style="fill:none;stroke:var(--mk-fg);stroke-width:3;stroke-linecap:square"/></symbol>
+        <symbol id="no" viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="3" style="fill:none;stroke:var(--mk-fg);stroke-width:2"/><path d="M7 12h10" style="fill:none;stroke:var(--mk-fg);stroke-width:2.5;stroke-linecap:square"/></symbol>
+    </svg>
 
-    <div class="container">
-        <section class="hero-section">
-            <p>CNC Backup is a subscription app for iPad and iPhone that backs up your CNC machines' controller files to SharePoint, Google Drive, or Dropbox, even when the shop floor is offline.</p>
-        </section>
-
-        <section class="compare-section" id="compare">
-            <h2>Compare plans</h2>
-            <table class="plans-table">
-                <caption class="sr-only">Individual and Fleet plans compared</caption>
-                <thead><tr><td></td><th scope="col">Individual</th><th scope="col" class="fleet">Fleet</th></tr></thead>
-                <tbody>
-                    <tr><th scope="row">Built for</th><td data-label="Individual">Solo operators and owners<small>One device</small></td><td class="fleet" data-label="Fleet">Shops with many operators and devices<small>Unlimited seats</small></td></tr>
-                    <tr><th scope="row">One-button backup<small>Tap once and the machine&rsquo;s programs, parameters and backup files are copied to your cloud</small></th><td data-label="Individual"><span class="yes"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>Included</span></td><td class="fleet" data-label="Fleet"><span class="yes"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>Included</span></td></tr>
-                    <tr><th scope="row">CNC machine detection<small>Automatically identifies the machine, whether it's a Fanuc, Haas, Siemens or another top vendor</small></th><td data-label="Individual"><span class="yes"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>Included</span></td><td class="fleet" data-label="Fleet"><span class="yes"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>Included</span></td></tr>
-                    <tr><th scope="row">Dynamic folder naming<small>Pick your folder format once. Every backup fills in the details from the machine</small></th><td data-label="Individual"><span class="yes"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>Included</span></td><td class="fleet" data-label="Fleet"><span class="yes"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>Included</span></td></tr>
-                    <tr><th scope="row">Upload verification<small>After each upload, the app checks the cloud copy against the checksum and size your provider reports. Dropbox, the third option, is checked by file size.</small></th><td data-label="Individual"><span class="yes"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>Included</span></td><td class="fleet" data-label="Fleet"><span class="yes"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>Included</span></td></tr>
-                    <tr><th scope="row">Activation</th><td data-label="Individual">License key</td><td class="fleet" data-label="Fleet">License key or Microsoft SSO<small>Your domain is verified before anyone can sign in</small></td></tr>
-                    <tr><th scope="row">Microsoft SSO<small>Microsoft Entra ID work accounts, no keys to hand out</small></th><td data-label="Individual"><span class="no">Not included</span></td><td class="fleet" data-label="Fleet"><span class="yes"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>Included</span></td></tr>
-                    <tr><th scope="row">Managed IT experience<small>Admin sets the SharePoint destination, folder naming and required labels</small></th><td data-label="Individual"><span class="no">Not included</span></td><td class="fleet" data-label="Fleet"><span class="yes"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>Optional</span></td></tr>
-                    <tr><th scope="row">Backup audit log</th><td data-label="Individual"><span class="no">Not included</span></td><td class="fleet" data-label="Fleet"><span class="yes"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>With managed</span></td></tr>
-                </tbody>
-            </table>
-            <p>Licenses are cached securely on the device, so backups keep working offline.</p>
-        </section>
-
-        <section class="pricing-section">
-            <h2>Choose your plan</h2>
-            <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-            <stripe-pricing-table pricing-table-id="prctbl_1UYGYJRRQgyeLbVDGSSF1JVD"
-            publishable-key="pk_live_51Txz4TRRQgyeLbVDjcvclPk71nk8FuPgLE66whUnfpc3ymWuk6MOsaTriy6uQt2qpFPwfPW4QoSf4fsJdfJip7LT007rdh4G5H">
-            </stripe-pricing-table>
-        </section>
-
-        <section class="policy-section">
-            <h2>Customer Service &amp; Support</h2>
-            <div class="contact-box">
-                <p>Questions? Use the <strong>Ask a question</strong> button at the bottom right of this page.</p>
-                <p><strong>Operating Hours:</strong> Monday – Friday, 9:00 AM – 5:00 PM EST</p>
-                <p>Visit our <a href="support.html">Support page</a> for setup help and frequently asked questions.</p>
-            </div>
-        </section>
+    <div class="topbar">
+        <div class="topbar-inner">
+            <a class="wordmark" href="index.html">GPV <span>Solutions</span></a>
+            <nav aria-label="Site">
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+        </div>
     </div>
 
-    <footer>
-        <a href="support.html">Support</a> &middot; <a href="privacy.html">Privacy Policy</a>
-        <p>&copy; 2026 GPV Solutions. All rights reserved.</p>
-        <p>GPV Solutions LLC | Industrial Software Systems</p>
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <div>
+                    <h1>Back up the <em>machine</em> in one tap</h1>
+                    <p class="lede">CNC Backup is a subscription app for iPad and iPhone that backs up your CNC machines' controller files to SharePoint, Google Drive, or Dropbox, even when the shop floor is offline.</p>
+                    <div class="hero-actions">
+                        <a class="btn" href="#plans">Choose your plan <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M5 13l7 7 7-7"/></svg></a>
+                        <a class="text-link" href="#compare">Compare plans</a>
+                    </div>
+                </div>
+
+                <aside class="tag" aria-labelledby="tag-title">
+                    <span class="tag-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17.5A4.5 4.5 0 0 1 6.5 8.6 6 6 0 0 1 18 9.5a4 4 0 0 1-.5 8"/><path d="M12 11v8M9 16l3 3 3-3"/></svg></span>
+                    <h2 class="tag-head" id="tag-title">How it works</h2>
+                    <ol class="steps">
+                        <li>
+                            <span class="pict"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M6 10.5h8M6 13.5h4"/><circle cx="18" cy="12" r="1.2"/></svg></span>
+                            <div><strong>Plug in the drive</strong><span>Read straight from the controller&rsquo;s USB stick. Nothing on it is ever changed.</span></div>
+                        </li>
+                        <li>
+                            <span class="pict"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="7" r="4" stroke-dasharray="2 2.4"/><path d="M9.5 9.5V20l3-3 2 4.2 2.2-1-2-4.2H19z"/></svg></span>
+                            <div><strong>Tap Start Backup</strong><span>Programs, parameters and backup files are copied. Offline? They upload when a connection returns.</span></div>
+                        </li>
+                        <li>
+                            <span class="pict"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 19A4.5 4.5 0 0 1 6 10 6 6 0 0 1 17.6 8.8 4.6 4.6 0 0 1 17.5 19z"/><path d="M12 16v-5M9.5 13l2.5-2.5 2.5 2.5"/></svg></span>
+                            <div><strong>Checked in your cloud</strong><span>Each upload is verified against what your provider reports.</span></div>
+                        </li>
+                    </ol>
+                    <p class="tag-foot">Machine Recovery Solution for Modern Manufacturing</p>
+                </aside>
+            </div>
+        </section>
+
+        <div class="wrap">
+            <section class="sign picker" id="plans" aria-labelledby="plans-h">
+                <h2 id="plans-h">Choose your plan</h2>
+                <div class="stripe-slot">
+                    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+                    <stripe-pricing-table pricing-table-id="prctbl_1UYGYJRRQgyeLbVDGSSF1JVD"
+                    publishable-key="pk_live_51Txz4TRRQgyeLbVDjcvclPk71nk8FuPgLE66whUnfpc3ymWuk6MOsaTriy6uQt2qpFPwfPW4QoSf4fsJdfJip7LT007rdh4G5H">
+                    </stripe-pricing-table>
+                </div>
+                <p class="picker-note"><a href="#compare">Compare Individual and Fleet</a></p>
+            </section>
+
+            <section class="sign" id="compare" aria-labelledby="compare-h">
+                <h2 id="compare-h">Compare plans</h2>
+                <div class="includes">
+                    <h3>Both plans include</h3>
+                    <ul>
+                        <li><strong>One-button backup</strong><span>Tap once and the machine&rsquo;s programs, parameters and backup files are copied to your cloud</span></li>
+                        <li><strong>CNC machine detection</strong><span>Automatically identifies the machine, whether it's a Fanuc, Haas, Siemens or another top vendor</span></li>
+                        <li><strong>Dynamic folder naming</strong><span>Pick your folder format once. Every backup fills in the details from the machine</span></li>
+                        <li><strong>Upload verification</strong><span>After each upload, the app checks the cloud copy against the checksum and size your provider reports. Dropbox, the third option, is checked by file size.</span></li></ul>
+                </div>
+                <table class="plans-table" role="table">
+                    <caption class="sr-only">Individual and Fleet plans compared</caption>
+                    <thead role="rowgroup"><tr role="row"><td role="presentation"></td><th role="columnheader" scope="col">Individual</th><th role="columnheader" scope="col" class="fleet">Fleet</th></tr></thead>
+                    <tbody role="rowgroup">
+                        <tr role="row"><th role="rowheader" scope="row">Built for</th><td role="cell">Solo operators and owners<small>One device</small></td><td role="cell" class="fleet">Shops with many operators and devices<small>Unlimited seats</small></td></tr>
+                        <tr role="row"><th role="rowheader" scope="row">Activation</th><td role="cell">License key</td><td role="cell" class="fleet">License key or Microsoft SSO<small>Your domain is verified before anyone can sign in</small></td></tr>
+                        <tr role="row"><th role="rowheader" scope="row">Microsoft SSO<small>Microsoft Entra ID work accounts, no keys to hand out</small></th><td role="cell"><span class="no"><svg class="mark off" aria-hidden="true"><use href="#no"/></svg>Not included</span></td><td role="cell" class="fleet"><span class="yes"><svg class="mark" aria-hidden="true"><use href="#yes"/></svg>Included</span></td></tr>
+                        <tr role="row"><th role="rowheader" scope="row">Managed IT experience<small>Admin sets the SharePoint destination, folder naming and required labels</small></th><td role="cell"><span class="no"><svg class="mark off" aria-hidden="true"><use href="#no"/></svg>Not included</span></td><td role="cell" class="fleet"><span class="yes"><svg class="mark" aria-hidden="true"><use href="#yes"/></svg>Optional</span></td></tr>
+                        <tr role="row"><th role="rowheader" scope="row">Backup audit log</th><td role="cell"><span class="no"><svg class="mark off" aria-hidden="true"><use href="#no"/></svg>Not included</span></td><td role="cell" class="fleet"><span class="yes"><svg class="mark" aria-hidden="true"><use href="#yes"/></svg>With managed</span></td></tr>
+                    </tbody>
+                </table>
+                <p class="table-note">Licenses are cached securely on the device, so backups keep working offline.</p>
+            </section>
+
+            <section class="sign hours" aria-labelledby="support-h">
+                <h2 id="support-h">Customer Service &amp; Support</h2>
+                <div class="sign-body">
+                    <p>Questions? Use the <strong>Ask a question</strong> button at the bottom right of this page.</p>
+                    <dl>
+                        <dt>Operating Hours</dt>
+                        <dd>Monday – Friday, 9:00 AM – 5:00 PM EST</dd>
+                    </dl>
+                    <p>Visit our <a href="support.html">Support page</a> for setup help and frequently asked questions.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-foot">
+        <div class="site-foot-inner">
+            <nav aria-label="Footer"><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></nav>
+            <p>&copy; 2026 GPV Solutions. All rights reserved.</p>
+            <p>GPV Solutions LLC | Industrial Software Systems</p>
+        </div>
     </footer>
 
     <script src="contact.js" defer></script>
