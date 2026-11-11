@@ -96,24 +96,24 @@ a:hover { color: var(--ink); }
 /* The hanging tag */
 .tag {
     position: relative; background: var(--white); border: var(--edge); border-radius: 14px;
-    box-shadow: 0 18px 32px rgba(17, 17, 17, 0.25); margin-top: 18px;
+    box-shadow: 0 18px 32px rgba(17, 17, 17, 0.25); margin-top: 76px;
     transform-origin: 50% 0;
     animation: tag-settle 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .tag::before {
     content: ""; position: absolute; top: -18px; left: 50%; width: 36px; height: 36px; margin-left: -18px;
     border: var(--edge); border-radius: 50%; background: var(--yellow); z-index: 1;
+    box-shadow: 0 0 0 5px var(--ink), inset 0 0 0 4px var(--white);
+}
+.tag::after {
+    content: ""; position: absolute; top: -78px; left: 50%; width: 4px; height: 60px; margin-left: -2px; background: var(--ink); border-radius: 3px;
 }
 .tag-head {
     background: var(--notice); color: var(--white); text-align: center;
-    padding: 1.7rem 1rem 0.5rem; border-radius: 10px 10px 0 0;
+    margin: 0; padding: 1.9rem 1rem 0.8rem; border-radius: 10px 10px 0 0;
     font: 800 2.25rem/1 var(--display); letter-spacing: 0.14em; text-transform: uppercase;
 }
-.tag-title {
-    margin: 0; padding: 1rem 1.5rem 0.25rem;
-    font: 800 1.6rem/1.1 var(--display); letter-spacing: 0.04em; text-transform: uppercase;
-}
-.steps { list-style: none; margin: 0; padding: 0 1.5rem; }
+.steps { list-style: none; margin: 0; padding: 0.5rem 1.5rem 0; }
 .steps li { display: grid; grid-template-columns: 64px 1fr; gap: 1rem; align-items: center; padding: 1rem 0; border-top: 2px solid var(--ink); }
 .steps li:first-child { border-top: 0; }
 .pict {
@@ -121,7 +121,7 @@ a:hover { color: var(--ink); }
 }
 .pict svg { width: 40px; height: 40px; fill: none; stroke: var(--ink); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .steps strong { display: block; font: 800 1.35rem/1.1 var(--display); letter-spacing: 0.05em; text-transform: uppercase; }
-.steps span { display: block; font-size: 0.975rem; line-height: 1.4; color: var(--muted); margin-top: 0.15rem; }
+.steps span { display: block; font-size: 0.95rem; line-height: 1.4; color: var(--muted); margin-top: 0.15rem; }
 .tag-foot {
     margin: 0; padding: 0.9rem 1.5rem 1.1rem; box-shadow: inset 0 3px 0 var(--ink); background: var(--concrete); border-radius: 0 0 10px 10px;
     font: 700 1.05rem/1.25 var(--display); letter-spacing: 0.06em; text-transform: uppercase; text-wrap: balance;
@@ -142,7 +142,25 @@ a:hover { color: var(--ink); }
     margin: 0; background: var(--ink); color: var(--yellow); padding: 0.7rem 1.5rem 0.55rem;
     font: 800 2rem/1.05 var(--display); letter-spacing: 0.1em; text-transform: uppercase;
 }
+.sign > h2, .band { position: relative; padding-left: 3rem; padding-right: 3rem; }
+.sign > h2::before, .sign > h2::after {
+    content: ""; position: absolute; top: 50%; width: 12px; height: 12px; margin-top: -6px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #8A8A84, #3A3A36 70%);
+}
+.sign > h2::before { left: 1.15rem; }
+.sign > h2::after { right: 1.15rem; }
 .sign-body { padding: 1.5rem; }
+
+.includes { padding: 1.5rem 1.5rem 1.75rem; border-bottom: 3px solid var(--ink); }
+.includes h3 { margin: 0 0 1rem; font: 800 1.5rem/1 var(--display); letter-spacing: 0.08em; text-transform: uppercase; }
+.includes ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem 2.5rem; }
+.includes li { display: block; margin: 0; padding-left: 2.1rem; position: relative; }
+.includes li::before {
+    content: ""; position: absolute; left: 0; top: 0.2rem; width: 1.4rem; height: 1.4rem; border-radius: 3px; background: var(--ink)
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12.5l4.2 4.2L18.5 7.8' fill='none' stroke='%23FFD100' stroke-width='3' stroke-linecap='square'/%3E%3C/svg%3E") center / 100% no-repeat;
+}
+.includes strong { display: block; font-weight: 600; line-height: 1.35; }
+.includes span { display: block; margin-top: 0.15rem; font-size: 0.95rem; line-height: 1.4; color: var(--muted); }
 .sign-body > p:first-child { margin-top: 0; }
 .sign-body > p:last-child { margin-bottom: 0; }
 
@@ -157,8 +175,7 @@ a:hover { color: var(--ink); }
 .plans-table thead th.fleet { background: var(--notice); color: var(--white); }
 .plans-table tbody th { width: 34%; font: 600 1.0625rem/1.35 var(--text); }
 .plans-table small { display: block; margin-top: 0.2rem; font: 400 0.95rem/1.4 var(--text); color: var(--muted); }
-.plans-table td.fleet { background: var(--notice-wash); box-shadow: inset 3px 0 0 var(--ink); }
-.plans-table thead th.fleet { box-shadow: inset 3px 0 0 var(--ink); }
+.plans-table td.fleet { background: var(--notice-wash); }
 .plans-table td { font-weight: 500; }
 .plans-table .yes, .plans-table .no { display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 600; }
 .plans-table .no { color: var(--muted); font-weight: 500; }
@@ -176,6 +193,7 @@ stripe-pricing-table { display: block; min-height: 12rem; }
 
 /* ---------- Footer ---------- */
 .site-foot { background: var(--ink); color: #D8D8D2; margin-top: 2rem; }
+.site-foot::before { content: ""; display: block; height: 16px; margin-top: -2rem; background: repeating-linear-gradient(-45deg, var(--ink) 0 16px, var(--yellow) 16px 32px); }
 .site-foot-inner { max-width: 1120px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
 .site-foot nav { display: flex; gap: 0.5rem; margin: 0 -0.75rem 1rem; }
 .site-foot nav a {
@@ -230,16 +248,20 @@ details > p { margin: 0; padding: 1rem 1.1rem 1.2rem; border-top: 2px solid var(
 @media (max-width: 640px) {
     .topbar-inner { padding: 0.25rem 1rem; }
     .wordmark { font-size: 1.25rem; }
-    .topbar nav a { padding: 0.9rem 0.5rem; font-size: 1rem; }
+    .topbar nav a { padding: 0.9rem 0.5rem; font-size: 1.05rem; }
     .wrap, .doc { padding-left: 1rem; padding-right: 1rem; }
     .wrap { padding-top: 2.5rem; }
     .sign { margin-bottom: 2.5rem; }
-    .sign > h2, .band { padding: 0.6rem 1rem 0.45rem; font-size: 1.5rem; }
+    .sign > h2, .band { padding: 0.6rem 2.25rem 0.45rem; font-size: 1.5rem; }
+    .sign > h2::before { left: 0.8rem; }
+    .sign > h2::after { right: 0.8rem; }
+    .includes { padding: 1rem; }
+    .includes ul { grid-template-columns: 1fr; }
     .sign-body, .stripe-slot { padding: 1rem; }
     .btn { width: 100%; justify-content: space-between; }
-    .hero p.lede { font-size: 1.125rem; }
+    .hero p.lede { font-size: 1.0625rem; }
     .doc-body { padding: 1.5rem 1.1rem 2rem; }
-    .doc-body h2 { font-size: 1.6rem; }
+    .doc-body h2 { font-size: 1.5rem; }
     .page-title-inner { padding: 2rem 1rem 2.25rem; }
     .site-foot-inner { padding-left: 1rem; padding-right: 1rem; }
 
@@ -249,7 +271,7 @@ details > p { margin: 0; padding: 1rem 1.1rem 1.2rem; border-top: 2px solid var(
     .plans-table thead th { font-size: 1.5rem; padding: 0.7rem 0.75rem 0.55rem; }
     .plans-table tbody tr { display: grid; grid-template-columns: 1fr 1fr; border-top: 2px solid var(--ink); }
     .plans-table tbody th { grid-column: 1 / -1; width: auto; border-top: 0; padding: 1rem 0.75rem 0.4rem; }
-    .plans-table td { border-top: 0; padding: 0.4rem 0.75rem 1rem; font-size: 0.975rem; }
+    .plans-table td { border-top: 0; padding: 0.4rem 0.75rem 1rem; font-size: 0.95rem; }
     .plans-table td::before {
         content: attr(data-label); display: block; margin-bottom: 0.3rem;
         font: 700 0.95rem/1 var(--display); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
