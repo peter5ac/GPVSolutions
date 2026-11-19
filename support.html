@@ -103,6 +103,21 @@
         </details>
 
         <details>
+        <summary>Can we limit who can sign in with SSO?</summary>
+        <p>Yes, in a managed Fleet. By default anyone with a work account on your approved domain can sign in. An admin can limit that to one Microsoft Entra <strong>security group</strong> under <strong>Admin</strong>, <strong>Settings</strong>, <strong>Sign-In Access</strong>: paste the group's Object ID (from its Overview page in the Entra admin center) and, if you like, a name for it. Admins can always sign in, so you can't lock yourself out. People in a security group nested inside that group count too. The group needs to be a <strong>Security</strong> group, not a Microsoft 365 group, and it works best if it was created as one from the start. Someone who is already signed in is checked when their license next renews, every few days. To remove them sooner, revoke their device (see below).</p>
+        </details>
+
+        <details>
+        <summary>I'm told "Your organization limits CNC Backup to members of a group." What do I do?</summary>
+        <p>Your admin has limited sign-in to one group, and your account isn't in it. The message names the group, or shows its ID if your admin didn't give it a name. Ask your admin to add you to that group, then sign in again. If you've just been added, it can take a few minutes to take effect.</p>
+        </details>
+
+        <details>
+        <summary>How do I remove a lost or stolen device?</summary>
+        <p>In a managed Fleet, an admin can revoke a single device under <strong>Admin</strong>, <strong>Devices</strong>. The next time that device reaches us it is signed out of Fleet, and its license, cached policy and connected SharePoint account are removed. Backups already staged in the Local Vault stay. Revoking is per device, not per person: the same person can sign in on another device as normal, and an admin can restore a device later. You can't revoke the device you're using; sign out on it instead. Revoking removes the app's access on that device. It doesn't end the account's Microsoft sign-in, so for a lost or stolen device also revoke the user's sessions in Entra ID. A device that never comes back online can't be told, and a reinstalled app shows up as a new device, so it isn't a hardware ban. To cut someone off everywhere, also remove them from your sign-in group.</p>
+        </details>
+
+        <details>
         <summary>What if my Fleet isn't managed?</summary>
         <p>Without an admin, each user chooses their own destination. Fleet users, whether on SSO or a license key, can connect Dropbox, Google Drive or SharePoint, and can connect several at once.</p>
         </details>
